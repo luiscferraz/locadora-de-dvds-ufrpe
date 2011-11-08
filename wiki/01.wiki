@@ -1,2 +1,0 @@
-  O sistema visará a produção de um software que forneça operações básicas para o funcionamento e gerenciamento de um locadora efetuando todo o controle de locação de DVDs e serviços relativos ao bom funcionamento da locadora. A ideia é desenvolver um sistema para gerenciar a locação de DVDs a clientes previamente cadastrados.
-  O sistema estará dividido basicamente em: gerenciamento do cadastro de clientes, do acervo de DVDs, da locação e devolução, dos fucionários, dos fornecedores,  gerenciamento do fluxo de caixa e das contas a pagar e a receber.
