@@ -1,13 +1,13 @@
 = Introdução =
 
-Casos de Uso
+== Casos de Uso ==
 
 Definem um cenário de possível iteração com um utilizador ou um outro sistema,
 descrevendo as funcionalidades ou objetivos. No sistema Locadora de DVD’s, o objetivo
 principal é o gerenciamento da locação de DVD’s a clientes previamente cadastrados, a
 partir disso, foram definidos os casos de uso.
 
-Diagrama de Casos de Uso
+== Diagrama de Casos de Uso ==
 
 O Diagrama de Casos de Uso evidencia as principais funcionalidades do sistema do
 ponto de vista do cliente. O sistema Locadora de DVD’s possui os seguintes atores e
@@ -21,14 +21,19 @@ Link ( )
 
 
 Número do Caso de Uso: UC0001
+
 Nome do caso de Uso: Manter Cadastro de Clientes
+
 Objetivos: Cadastrar, alterar, remover e alterar dados de clientes.
+
 Descrição: Permitir o gerenciamento de dos cadastros dos clientes.
+
 Ator: Usuário.
 
-Prioridade: [ x ] Alta [ ] Média [ ] Baixa
+Prioridade: Alta 
 
 Pré-condição: Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
+
 Pós-condições: Alterar, remover e alterar dados de clientes e realizar locação de DVD's.
 
 
@@ -38,8 +43,11 @@ Cenários principais de sucesso:
 Cadastro de cliente
 
 1. O Cliente informa seus dados pessoais para a realização do cadastro;
+
 2. O Usuário logado no sistema cadastra os dados do cliente na base de dados;
+
 3. O sistema envia uma mensagem de êxito, após a realização de cadastro;
+
 
 Exclusão de cadastro
 
@@ -84,7 +92,7 @@ Objetivos: Cadastrar, alterar, remover e alterar dados DVD's.
 Descrição:Permitir o gerenciamento de dos cadastros dos DVD's.
 Ator: Usuário.
 
-Prioridade: [ x ] Alta [ ] Média [ ] Baixa
+Prioridade: Alta 
 
 Pré-condição: Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
 Pós-condições: Locação de DVDs. Reserva.
