@@ -1,3 +1,5 @@
-•	RNF001: Controle de acesso ao sistema.
-•	RNF002: Compatibilidade com sistema operacional Windows XP, Vista, Seven.
-•	RNF003: Armazenamento de dados em tabelas do Microsoft Access.
+=Requisitos Não Funcionais=
+
+===RNF001: Controle de acesso ao sistema.===
+===RNF002: Compatibilidade com sistema operacional Windows XP, Vista, Seven.===
+===RNF003: Armazenamento de dados em tabelas do Microsoft Access.===
