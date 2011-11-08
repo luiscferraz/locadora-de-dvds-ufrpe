@@ -1,5 +1,4 @@
 = Requisitos Funcionais =
-<br>
 
 ===RF001: Gerenciar o Cadastro de Clientes===
 Realizar o cadastramento, remoção, consulta e alteração de dados de um cliente.
