@@ -1,0 +1,14 @@
+•	RF001: Gerenciar o Cadastro de Clientes
+Realizar o cadastramento, remoção, consulta e alteração de dados de um cliente.
+•	RF002: Gerenciar o Acervo de DVDs 
+Realizar o cadastramento, remoção, consulta, reserva  e alteração de DVDs na base de dados.
+•	RF003: Efetuar Locação e Devolução
+Realizar locações de filmes para clientes pré-cadastrados,  receber a devolução e realizar pagamento 
+•	RF004: Manter Funcionários
+Realizar o cadastramento, remoção e alteração dos dados dos funcionário da video locadora, assim como a permissão para o acesso ao sistema.
+•	RF005: Manter Fornecedores
+Realizar o cadastramento, remoção e alteração dos fornecedores da locadora na base dados.
+•	RF006: Controle do Fluxo de Caixa
+Realizar a abertura e o fechamento do caixa. Realizar o inclusão, remoção alteração e consulta de entradas e retiradas de dinheiro na locadora na base de dados.
+•	RF007: Gerenciar Contas
+Realizar inclusão, remoção, alteração e consulta das receitas e despesas da locadora na base de dados. 
