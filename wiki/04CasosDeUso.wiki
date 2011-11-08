@@ -135,16 +135,20 @@ Link ( )
 
 ===Fluxos Alternativos:===
 
-*Cadastro de DVD*<br>
+*Cadastro de DVD*
+
 *A1.* Erro ao salvar o cadastro na base de dados: uma mensagem de erro é exibida, retornando ao passo 2;
 
 <br>*Exclusão de DVD*
+
 *A1.* DVD não encontrado, retorna ao passo 1;
 
 <br>*Alteração de dados*
+
 *A1.* DVD não encontrado, retorna ao passo 1;
 
 *A2.* Erro ao salvar o registro: uma mesagem de erro é exibida, retornando ao passo 2;
 
 <br>*Consulta*
+
 *A1.* DVD não encontrado, retorna ao passo 1;
