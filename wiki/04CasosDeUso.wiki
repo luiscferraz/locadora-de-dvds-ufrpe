@@ -90,57 +90,61 @@ Link ( )
 -----------
 
 ===Número do Caso de Uso: UC0002===
-Nome do caso de Uso: Manter Acervo
-Objetivos: Cadastrar, alterar, remover e alterar dados DVD's.
-Descrição:Permitir o gerenciamento de dos cadastros dos DVD's.
-Ator: Usuário.
+*Nome do caso de Uso:* Manter Acervo<br>
+*Objetivos:* Cadastrar, alterar, remover e alterar dados DVD's.<br>
+*Descrição:* Permitir o gerenciamento de dos cadastros dos DVD's.<br>
+*Ator:* Usuário<br>
+*Prioridade:* Alta<br> 
 
-Prioridade: Alta 
+*Pré-condições:* Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
 
-Pré-condição: Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
-Pós-condições: Locação de DVDs. Reserva.
+*Pós-condições:* Locação de DVDs. Reserva.
+
+===Cenários principais de sucesso:===
+
+*Cadastro de DVD*
+
+*1.* Fornecedor disponibiliza um novo DVD.
+
+*2.* Usuário cadastra os dados do DVD na base de dados.
+
+<br>*Exclusão de DVD*
+
+*1.* O Usuário informa o título do DVD a ser procurado na base de dados;
+
+*2.* Os dados do DVD são exibidos;
+
+*3.* O Usuário seleciona a opção de excluir o DVD e uma mensagem de confirmação é exibida;
+
+*4.* O Usuário confirma e o DVD é excluído;
+
+<br>*Alteração de dados*
+
+*1.* O Usuário informa o título do DVD a ser procurado na base de dados;
+
+*2.* Os dados do DVD são exibidos;
+
+*3.* O Usuário altera os dados e salva na base de dados;
+
+<br>*Consulta*
+
+*1.* O Usuário informa o título do DVD a ser procurado na base de dados;
+
+*2.* Os dados do DVD são exibidos.
 
 
-Cenários principais de sucesso:
+===Fluxos Alternativos:===
 
+*Cadastro de DVD*<br>
+*A1.* Erro ao salvar o cadastro na base de dados: uma mensagem de erro é exibida, retornando ao passo 2;
 
-Cadastro de DVD
+<br>*Exclusão de DVD*
+*A1.* DVD não encontrado, retorna ao passo 1;
 
-1. Fornecedor disponibiliza um novo DVD.
-2. Usuário cadastra os dados do DVD na base de dados.
+<br>*Alteração de dados*
+*A1.* DVD não encontrado, retorna ao passo 1;
 
-Exclusão de DVD
+*A2.* Erro ao salvar o registro: uma mesagem de erro é exibida, retornando ao passo 2;
 
-1. O Usuário informa o título do DVD a ser procurado na base de dados;
-2. Os dados do DVD são exibidos;
-3. O Usuário seleciona a opção de excluir o DVD e uma mensagem de confirmação é
-exibida;
-4. O Usuário confirma e o DVD é excluído;
-
-Alteração de dados
-
-1. O Usuário informa o título do DVD a ser procurado na base de dados;
-2. Os dados do DVD são exibidos;
-3. O Usuário altera os dados e salva na base de dados;
-
-Consulta
-
-1. O Usuário informa o título do DVD a ser procurado na base de dados;
-2. Os dados do DVD são exibidos.
-
-
-Fluxos Alternativos:
-
-Cadastro de DVD
-A1. Erro ao salvar o cadastro na base de dados: uma mensagem de erro é exibida,
-retornando ao passo 2;
-
-Exclusão de DVD
-A1. DVD não encontrado, retorna ao passo 1;
-
-Alteração de dados
-A1. DVD não encontrado, retorna ao passo 1;
-A2. Erro ao salvar o registro: uma mesagem de erro é exibida, retornando ao passo 2;
-
-Consulta
-A1. DVD não encontrado, retorna ao passo 1;
+<br>*Consulta*
+*A1.* DVD não encontrado, retorna ao passo 1;
