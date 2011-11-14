@@ -60,6 +60,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -97,7 +98,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dVDTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.DVDTableAdapter();
             this.tableAdapterManager = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager();
-            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             código_DVDLabel = new System.Windows.Forms.Label();
             títuloLabel = new System.Windows.Forms.Label();
             gêneroLabel = new System.Windows.Forms.Label();
@@ -191,7 +199,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(45, 76);
+            label1.Location = new System.Drawing.Point(41, 68);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(55, 16);
             label1.TabIndex = 35;
@@ -200,7 +208,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(45, 104);
+            label2.Location = new System.Drawing.Point(41, 96);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(52, 16);
             label2.TabIndex = 37;
@@ -209,7 +217,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(45, 132);
+            label3.Location = new System.Drawing.Point(41, 124);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(64, 16);
             label3.TabIndex = 39;
@@ -218,7 +226,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(45, 160);
+            label4.Location = new System.Drawing.Point(41, 152);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(55, 16);
             label4.TabIndex = 41;
@@ -227,7 +235,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(347, 160);
+            label5.Location = new System.Drawing.Point(343, 152);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(100, 16);
             label5.TabIndex = 43;
@@ -236,7 +244,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(45, 188);
+            label6.Location = new System.Drawing.Point(41, 180);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(155, 16);
             label6.TabIndex = 45;
@@ -245,7 +253,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(45, 216);
+            label7.Location = new System.Drawing.Point(41, 208);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(173, 16);
             label7.TabIndex = 47;
@@ -261,12 +269,14 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(615, 355);
+            this.tabControl1.Size = new System.Drawing.Size(615, 389);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.bindingNavigator1);
             this.tabPage1.Controls.Add(label1);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -286,7 +296,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(607, 326);
+            this.tabPage1.Size = new System.Drawing.Size(607, 360);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Adicionar";
             // 
@@ -302,7 +312,7 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton7});
-            this.bindingNavigator1.Location = new System.Drawing.Point(4, 297);
+            this.bindingNavigator1.Location = new System.Drawing.Point(4, 343);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
@@ -312,6 +322,7 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(599, 25);
             this.bindingNavigator1.TabIndex = 49;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigator1.Visible = false;
             // 
             // toolStripButton1
             // 
@@ -347,7 +358,7 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Código DVD", true));
-            this.textBox2.Location = new System.Drawing.Point(162, 70);
+            this.textBox2.Location = new System.Drawing.Point(158, 62);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(75, 22);
@@ -356,7 +367,7 @@
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Título", true));
-            this.textBox3.Location = new System.Drawing.Point(162, 101);
+            this.textBox3.Location = new System.Drawing.Point(158, 93);
             this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(408, 22);
@@ -365,7 +376,7 @@
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Gênero", true));
-            this.textBox4.Location = new System.Drawing.Point(162, 129);
+            this.textBox4.Location = new System.Drawing.Point(158, 121);
             this.textBox4.MaxLength = 100;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(408, 22);
@@ -374,7 +385,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Preço", true));
-            this.maskedTextBox1.Location = new System.Drawing.Point(162, 157);
+            this.maskedTextBox1.Location = new System.Drawing.Point(158, 149);
             this.maskedTextBox1.Mask = "$ 00,00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(66, 22);
@@ -383,7 +394,7 @@
             // textBox5
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Classificação", true));
-            this.textBox5.Location = new System.Drawing.Point(470, 157);
+            this.textBox5.Location = new System.Drawing.Point(466, 149);
             this.textBox5.MaxLength = 20;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
@@ -392,7 +403,7 @@
             // textBox6
             // 
             this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Código do Fornecedor", true));
-            this.textBox6.Location = new System.Drawing.Point(228, 185);
+            this.textBox6.Location = new System.Drawing.Point(224, 177);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 22);
             this.textBox6.TabIndex = 46;
@@ -400,7 +411,7 @@
             // textBox7
             // 
             this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dVDBindingSource, "Nº de Cópias Disponíveis", true));
-            this.textBox7.Location = new System.Drawing.Point(228, 213);
+            this.textBox7.Location = new System.Drawing.Point(224, 205);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 22);
             this.textBox7.TabIndex = 48;
@@ -409,6 +420,12 @@
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.bindingNavigator2);
             this.tabPage2.Controls.Add(código_DVDLabel);
@@ -432,9 +449,18 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(607, 326);
+            this.tabPage2.Size = new System.Drawing.Size(607, 360);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Excluir / Alterar";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(151, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 16);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "R$";
             // 
             // bindingNavigator2
             // 
@@ -458,7 +484,7 @@
             this.toolStripButton9,
             this.toolStripSeparator2,
             this.toolStripButton14});
-            this.bindingNavigator2.Location = new System.Drawing.Point(4, 297);
+            this.bindingNavigator2.Location = new System.Drawing.Point(4, 343);
             this.bindingNavigator2.MoveFirstItem = this.toolStripButton10;
             this.bindingNavigator2.MoveLastItem = this.toolStripButton13;
             this.bindingNavigator2.MoveNextItem = this.toolStripButton12;
@@ -468,6 +494,7 @@
             this.bindingNavigator2.Size = new System.Drawing.Size(599, 25);
             this.bindingNavigator2.TabIndex = 36;
             this.bindingNavigator2.Text = "bindingNavigator1";
+            this.bindingNavigator2.Visible = false;
             // 
             // toolStripLabel2
             // 
@@ -644,7 +671,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(599, 318);
+            this.shapeContainer1.Size = new System.Drawing.Size(599, 352);
             this.shapeContainer1.TabIndex = 35;
             this.shapeContainer1.TabStop = false;
             // 
@@ -666,7 +693,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(607, 326);
+            this.tabPage3.Size = new System.Drawing.Size(607, 372);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Consultar";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -768,20 +795,100 @@
             this.tableAdapterManager.ReservaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // label9
+            // button1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(151, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 16);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "R$";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(483, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 30);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Salvar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(360, 301);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 30);
+            this.button2.TabIndex = 39;
+            this.button2.Text = "Excluir";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(205, 302);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(39, 28);
+            this.button3.TabIndex = 40;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(148, 302);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 28);
+            this.button4.TabIndex = 41;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(110, 302);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 28);
+            this.button5.TabIndex = 42;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(40, 302);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(39, 28);
+            this.button6.TabIndex = 43;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(397, 277);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(79, 30);
+            this.button7.TabIndex = 50;
+            this.button7.Text = "Salvar";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(145, 277);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 30);
+            this.button8.TabIndex = 51;
+            this.button8.Text = "Novo";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form_acervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 348);
+            this.ClientSize = new System.Drawing.Size(615, 386);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -867,5 +974,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }

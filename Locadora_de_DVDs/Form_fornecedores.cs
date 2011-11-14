@@ -104,5 +104,45 @@ namespace Locadora_de_DVDs
         {
             this.fornecedoresTableAdapter.FillByPesquisarFornecedor(bD_LocadoraDataSet.Fornecedores, textBox1.Text);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            toolStripButton7_Click(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorDeleteItem_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.fornecedoresBindingSource.MoveLast();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.fornecedoresBindingSource.MoveNext();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.fornecedoresBindingSource.MovePrevious();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.fornecedoresBindingSource.MoveFirst();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            fornecedoresBindingNavigatorSaveItem_Click(sender, e);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.fornecedoresBindingSource.AddNew();
+        }
     }
 }

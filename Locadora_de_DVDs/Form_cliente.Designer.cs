@@ -68,8 +68,10 @@
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -113,8 +115,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.clienteTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ClienteTableAdapter();
             this.tableAdapterManager = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             código_ClienteLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             rGLabel = new System.Windows.Forms.Label();
@@ -355,7 +355,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(378, 329);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 31);
+            this.button2.Size = new System.Drawing.Size(79, 30);
             this.button2.TabIndex = 38;
             this.button2.Text = "Salvar";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -365,9 +365,9 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(131, 329);
+            this.button1.Location = new System.Drawing.Point(148, 329);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.Size = new System.Drawing.Size(79, 30);
             this.button1.TabIndex = 37;
             this.button1.Text = "Novo";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -427,7 +427,6 @@
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(67, 22);
             this.toolStripButton7.Text = "Salvar";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // textBox2
             // 
@@ -549,32 +548,53 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Excluir / Alterar";
             // 
+            // button8
+            // 
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(44, 346);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(39, 28);
+            this.button8.TabIndex = 27;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(83, 351);
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(109, 346);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(29, 23);
+            this.button7.Size = new System.Drawing.Size(32, 28);
             this.button7.TabIndex = 26;
-            this.button7.Text = "Anterior";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(146, 351);
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(147, 346);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(29, 23);
+            this.button6.Size = new System.Drawing.Size(32, 28);
             this.button6.TabIndex = 25;
-            this.button6.Text = "Próximo";
+            this.button6.Text = "\r\n\r\n";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(207, 346);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(39, 28);
+            this.button5.TabIndex = 24;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(303, 344);
+            this.button4.Location = new System.Drawing.Point(350, 345);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 41);
+            this.button4.Size = new System.Drawing.Size(79, 30);
             this.button4.TabIndex = 23;
             this.button4.Text = "Excluir";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -584,9 +604,9 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(440, 344);
+            this.button3.Location = new System.Drawing.Point(474, 344);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 41);
+            this.button3.Size = new System.Drawing.Size(79, 30);
             this.button3.TabIndex = 22;
             this.button3.Text = "Salvar";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -641,7 +661,6 @@
             this.toolStripButton3.RightToLeftAutoMirrorImage = true;
             this.toolStripButton3.Size = new System.Drawing.Size(67, 22);
             this.toolStripButton3.Text = "Excluir";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -714,7 +733,6 @@
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size(67, 22);
             this.toolStripButton9.Text = "Salvar";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // textBox1
             // 
@@ -958,26 +976,6 @@
             this.tableAdapterManager.ReservaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(55, 351);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(25, 23);
-            this.button8.TabIndex = 27;
-            this.button8.Text = "Primeiro";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(181, 351);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 23);
-            this.button5.TabIndex = 24;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Form_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -986,6 +984,7 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_cliente";

@@ -16,8 +16,6 @@ namespace Locadora_de_DVDs
             InitializeComponent();
         }
 
-        
-
         private void alterardata()
         {
             data_da_LocaçãoDateTimePicker.Text = DateTime.Now.ToShortDateString();
@@ -33,6 +31,14 @@ namespace Locadora_de_DVDs
 
         private void Form_locacao_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_LocadoraDataSet2.DVD' table. You can move, or remove it, as needed.
+            this.dVDTableAdapter.Fill(this.bD_LocadoraDataSet2.DVD);
+            // TODO: This line of code loads data into the 'bD_LocadoraDataSet.ItensReserva' table. You can move, or remove it, as needed.
+            this.itensReservaTableAdapter.Fill(this.bD_LocadoraDataSet.ItensReserva);
+            // TODO: This line of code loads data into the 'bD_LocadoraDataSet.ItensReserva' table. You can move, or remove it, as needed.
+            this.itensReservaTableAdapter.Fill(this.bD_LocadoraDataSet.ItensReserva);
+            // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Reserva' table. You can move, or remove it, as needed.
+            this.reservaTableAdapter.Fill(this.bD_LocadoraDataSet.Reserva);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet1.DVD' table. You can move, or remove it, as needed.
             this.dVDTableAdapter.Fill(this.bD_LocadoraDataSet1.DVD);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.DVD' table. You can move, or remove it, as needed.
@@ -97,10 +103,7 @@ namespace Locadora_de_DVDs
         
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-             Double[] precototal;
-             
-                         
+        {           
             if (e.KeyChar == 13)
             {
                 comboBox2.SelectedValue = textBox1.Text;
@@ -124,7 +127,7 @@ namespace Locadora_de_DVDs
                     string preco = this.bD_LocadoraDataSet.DVD.FindByCódigo_DVD(Convert.ToInt32(textBox1.Text)).Preço;
                     int ncopias = this.bD_LocadoraDataSet.DVD.FindByCódigo_DVD(Convert.ToInt32(textBox1.Text)).Nº_de_Cópias_Disponíveis;
                     string clas = this.bD_LocadoraDataSet.DVD.FindByCódigo_DVD(Convert.ToInt32(textBox1.Text)).Classificação;
-                    double n = Convert.ToDouble(preco);
+                    //double n = Convert.ToDouble(preco);
                     
                     if (ncopias > 0)
                     {
@@ -132,8 +135,8 @@ namespace Locadora_de_DVDs
                         {
                             this.bD_LocadoraDataSet.Item.Rows.Add(null, Convert.ToInt32(código_LocaçãoTextBox.Text), Convert.ToInt32(textBox1.Text), preco, clas, ncopias);
 
-                            double soma = Convert.ToDouble();
-                            preço_TotalTextBox.Text = Convert.ToString(soma);
+                            //double soma = Convert.ToDouble(this.itemTableAdapter.ItemSomaPreço());
+                            //preço_TotalTextBox.Text = Convert.ToString(soma);
                         }
                         else
                         {
@@ -149,8 +152,7 @@ namespace Locadora_de_DVDs
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao salvar!" + ex.Message);
-            }
-
+            }       
         }
 
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
@@ -161,6 +163,121 @@ namespace Locadora_de_DVDs
         private void button1_Click(object sender, EventArgs e)
         {
             this.itemBindingSource.RemoveCurrent();
+        }
+
+
+        // ---------------------------------------------------RESERVA---------------------------------------------------------
+
+        private void código_ClienteTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                comboBox3.SelectedValue = código_ClienteTextBox.Text;
+
+                if (comboBox3.Text == "")
+                {
+                    MessageBox.Show("Cliente não cadastrado!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void comboBox3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            código_ClienteTextBox.Text = comboBox3.SelectedValue.ToString();
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                comboBox4.SelectedValue = textBox2.Text;
+
+                if (comboBox4.Text == "")
+                {
+                    MessageBox.Show("Cliente não cadastrado!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            int cod2;
+
+            try
+            {
+                if (e.KeyChar == 13)
+                {
+                    cod2 = this.dVDTableAdapter.FillByConsultaDVD(bD_LocadoraDataSet.DVD, Convert.ToInt32(textBox2.Text));
+
+                    this.dVDTableAdapter.Fill(bD_LocadoraDataSet.DVD);
+
+                    int ncopias2 = this.bD_LocadoraDataSet.DVD.FindByCódigo_DVD(Convert.ToInt32(textBox2.Text)).Nº_de_Cópias_Disponíveis;
+
+                    if (cod2 == 1)
+                    {
+                        this.bD_LocadoraDataSet.ItensReserva.Rows.Add(null, Convert.ToInt32(código_LocaçãoTextBox.Text), Convert.ToInt32(textBox2.Text), ncopias2);
+                    }
+                    else
+                    {
+                        MessageBox.Show("DVD não encontrado!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void comboBox4_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textBox2.Text = comboBox4.SelectedValue.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.itensReservaBindingSource.RemoveCurrent();
+        }
+
+        private void ReservaSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.reservaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(código_ClienteTextBox.Text) || string.IsNullOrEmpty(comboBox3.Text))
+            {
+                MessageBox.Show("Informe o cliente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (itensReservaDataGridView.RowCount > 1)
+                {
+                    ReservaSaveItem_Click(sender, e);
+                    MessageBox.Show("Reserva realizada com sucesso!", "Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Informe os DVDs!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.reservaBindingSource.AddNew();
+            data_da_ReservaDateTimePicker.Text = DateTime.Now.ToShortDateString();
+            comboBox3.Text = null;
+            comboBox4.Text = null;
+            textBox2.Text = null;
+            if (itensReservaDataGridView.RowCount > 1)
+            {
+                for (int i = 0; i <= itensReservaDataGridView.RowCount + 1; i++)
+                {
+                    this.itensReservaBindingSource.RemoveCurrent();
+                }
+            }
+            
         }
 
     }

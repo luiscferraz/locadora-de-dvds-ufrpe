@@ -144,6 +144,5 @@ namespace Locadora_de_DVDs
         {
             this.clienteBindingSource.MoveFirst();
         }
-        
     }
 }

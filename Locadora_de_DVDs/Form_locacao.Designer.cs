@@ -35,10 +35,16 @@
             System.Windows.Forms.Label código_LocaçãoLabel;
             System.Windows.Forms.Label preço_TotalLabel;
             System.Windows.Forms.Label situaçãoLabel;
+            System.Windows.Forms.Label códigoLabel;
+            System.Windows.Forms.Label código_ClienteLabel;
+            System.Windows.Forms.Label data_da_ReservaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_locacao));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dVDBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.bD_LocadoraDataSet1 = new Locadora_de_DVDs.BD_LocadoraDataSet();
@@ -52,21 +58,42 @@
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.locaçãoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD_LocadoraDataSet = new Locadora_de_DVDs.BD_LocadoraDataSet();
-            this.button3 = new System.Windows.Forms.Button();
-            this.código_LocaçãoTextBox = new System.Windows.Forms.TextBox();
-            this.preço_TotalTextBox = new System.Windows.Forms.TextBox();
-            this.situaçãoTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.situaçãoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.código_do_ClienteTextBox = new System.Windows.Forms.TextBox();
+            this.código_LocaçãoTextBox = new System.Windows.Forms.TextBox();
             this.data_da_LocaçãoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.data_da_DevoluçãoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.preço_TotalTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.itensReservaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dVDBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_LocadoraDataSet2 = new Locadora_de_DVDs.BD_LocadoraDataSet();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itensReservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.códigoTextBox = new System.Windows.Forms.TextBox();
+            this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.código_ClienteTextBox = new System.Windows.Forms.TextBox();
+            this.data_da_ReservaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dVDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dVDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.locaçãoTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.LocaçãoTableAdapter();
@@ -94,16 +121,20 @@
             this.Classificação = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVDBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bDLocadoraDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reservaTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ReservaTableAdapter();
+            this.itensReservaTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ItensReservaTableAdapter();
             código_do_ClienteLabel = new System.Windows.Forms.Label();
             data_da_LocaçãoLabel = new System.Windows.Forms.Label();
             data_da_DevoluçãoLabel = new System.Windows.Forms.Label();
             código_LocaçãoLabel = new System.Windows.Forms.Label();
             preço_TotalLabel = new System.Windows.Forms.Label();
             situaçãoLabel = new System.Windows.Forms.Label();
+            códigoLabel = new System.Windows.Forms.Label();
+            código_ClienteLabel = new System.Windows.Forms.Label();
+            data_da_ReservaLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource4)).BeginInit();
@@ -114,13 +145,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaBindingSource)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locaçãoBindingNavigator)).BeginInit();
             this.locaçãoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDLocadoraDataSet1BindingSource)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // código_do_ClienteLabel
@@ -177,6 +216,33 @@
             situaçãoLabel.TabIndex = 26;
             situaçãoLabel.Text = "Situação:";
             // 
+            // códigoLabel
+            // 
+            códigoLabel.AutoSize = true;
+            códigoLabel.Location = new System.Drawing.Point(24, 46);
+            códigoLabel.Name = "códigoLabel";
+            códigoLabel.Size = new System.Drawing.Size(52, 16);
+            códigoLabel.TabIndex = 0;
+            códigoLabel.Text = "Código";
+            // 
+            // código_ClienteLabel
+            // 
+            código_ClienteLabel.AutoSize = true;
+            código_ClienteLabel.Location = new System.Drawing.Point(24, 147);
+            código_ClienteLabel.Name = "código_ClienteLabel";
+            código_ClienteLabel.Size = new System.Drawing.Size(115, 16);
+            código_ClienteLabel.TabIndex = 2;
+            código_ClienteLabel.Text = "Código do Cliente";
+            // 
+            // data_da_ReservaLabel
+            // 
+            data_da_ReservaLabel.AutoSize = true;
+            data_da_ReservaLabel.Location = new System.Drawing.Point(24, 80);
+            data_da_ReservaLabel.Name = "data_da_ReservaLabel";
+            data_da_ReservaLabel.Size = new System.Drawing.Size(111, 16);
+            data_da_ReservaLabel.TabIndex = 4;
+            data_da_ReservaLabel.Text = "Data da Reserva";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -206,6 +272,31 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Locação";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.itemDataGridView);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(14, 234);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(633, 296);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cesta";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(17, 257);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Excluir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -214,6 +305,15 @@
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 30;
             this.label3.Text = "Título do DVD";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Código do DVD";
             // 
             // comboBox2
             // 
@@ -310,32 +410,23 @@
             this.bD_LocadoraDataSet.DataSetName = "BD_LocadoraDataSet";
             this.bD_LocadoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(29, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(75, 22);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(559, 549);
+            this.button3.Location = new System.Drawing.Point(532, 549);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(115, 37);
             this.button3.TabIndex = 28;
-            this.button3.Text = "Salvar";
+            this.button3.Text = "Efetuar Locação";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // código_LocaçãoTextBox
-            // 
-            this.código_LocaçãoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locaçãoBindingSource, "Código Locação", true));
-            this.código_LocaçãoTextBox.Location = new System.Drawing.Point(146, 35);
-            this.código_LocaçãoTextBox.Name = "código_LocaçãoTextBox";
-            this.código_LocaçãoTextBox.ReadOnly = true;
-            this.código_LocaçãoTextBox.Size = new System.Drawing.Size(75, 22);
-            this.código_LocaçãoTextBox.TabIndex = 23;
-            // 
-            // preço_TotalTextBox
-            // 
-            this.preço_TotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locaçãoBindingSource, "Preço Total", true));
-            this.preço_TotalTextBox.Location = new System.Drawing.Point(106, 549);
-            this.preço_TotalTextBox.Name = "preço_TotalTextBox";
-            this.preço_TotalTextBox.Size = new System.Drawing.Size(83, 22);
-            this.preço_TotalTextBox.TabIndex = 25;
             // 
             // situaçãoTextBox
             // 
@@ -344,23 +435,6 @@
             this.situaçãoTextBox.Name = "situaçãoTextBox";
             this.situaçãoTextBox.Size = new System.Drawing.Size(139, 22);
             this.situaçãoTextBox.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 16);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Código do DVD";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(29, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 22);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // groupBox1
             // 
@@ -417,6 +491,15 @@
             this.código_do_ClienteTextBox.TabIndex = 3;
             this.código_do_ClienteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.código_do_ClienteTextBox_KeyPress);
             // 
+            // código_LocaçãoTextBox
+            // 
+            this.código_LocaçãoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locaçãoBindingSource, "Código Locação", true));
+            this.código_LocaçãoTextBox.Location = new System.Drawing.Point(146, 35);
+            this.código_LocaçãoTextBox.Name = "código_LocaçãoTextBox";
+            this.código_LocaçãoTextBox.ReadOnly = true;
+            this.código_LocaçãoTextBox.Size = new System.Drawing.Size(75, 22);
+            this.código_LocaçãoTextBox.TabIndex = 23;
+            // 
             // data_da_LocaçãoDateTimePicker
             // 
             this.data_da_LocaçãoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.locaçãoBindingSource, "Data da Locação", true));
@@ -435,13 +518,21 @@
             this.data_da_DevoluçãoDateTimePicker.Size = new System.Drawing.Size(126, 22);
             this.data_da_DevoluçãoDateTimePicker.TabIndex = 7;
             // 
+            // preço_TotalTextBox
+            // 
+            this.preço_TotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locaçãoBindingSource, "Preço Total", true));
+            this.preço_TotalTextBox.Location = new System.Drawing.Point(106, 549);
+            this.preço_TotalTextBox.Name = "preço_TotalTextBox";
+            this.preço_TotalTextBox.Size = new System.Drawing.Size(83, 22);
+            this.preço_TotalTextBox.TabIndex = 25;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(656, 597);
+            this.tabPage2.Size = new System.Drawing.Size(664, 599);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Devolução";
             // 
@@ -449,12 +540,219 @@
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(656, 597);
+            this.tabPage3.Size = new System.Drawing.Size(664, 599);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reserva";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(348, 546);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(115, 37);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Nova Reserva";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(528, 546);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 37);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Efetuar Reserva";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.itensReservaDataGridView);
+            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Location = new System.Drawing.Point(20, 233);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(626, 300);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "DVDs";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(16, 263);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Excluir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // itensReservaDataGridView
+            // 
+            this.itensReservaDataGridView.AutoGenerateColumns = false;
+            this.itensReservaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itensReservaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.itensReservaDataGridView.DataSource = this.itensReservaBindingSource;
+            this.itensReservaDataGridView.Location = new System.Drawing.Point(16, 96);
+            this.itensReservaDataGridView.Name = "itensReservaDataGridView";
+            this.itensReservaDataGridView.Size = new System.Drawing.Size(590, 152);
+            this.itensReservaDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Código DVD";
+            this.dataGridViewTextBoxColumn12.DataSource = this.dVDBindingSource6;
+            this.dataGridViewTextBoxColumn12.DisplayMember = "Título";
+            this.dataGridViewTextBoxColumn12.HeaderText = "DVD";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn12.ValueMember = "Código DVD";
+            this.dataGridViewTextBoxColumn12.Width = 447;
+            // 
+            // dVDBindingSource6
+            // 
+            this.dVDBindingSource6.DataMember = "DVD";
+            this.dVDBindingSource6.DataSource = this.bD_LocadoraDataSet2;
+            // 
+            // bD_LocadoraDataSet2
+            // 
+            this.bD_LocadoraDataSet2.DataSetName = "BD_LocadoraDataSet";
+            this.bD_LocadoraDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Nº de Cópias Disponíveis";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Nº de Cópias Disponíveis";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // itensReservaBindingSource
+            // 
+            this.itensReservaBindingSource.DataMember = "ItensReserva";
+            this.itensReservaBindingSource.DataSource = this.bD_LocadoraDataSet;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.dVDBindingSource4;
+            this.comboBox4.DisplayMember = "Título";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(238, 57);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(368, 24);
+            this.comboBox4.TabIndex = 3;
+            this.comboBox4.ValueMember = "Código DVD";
+            this.comboBox4.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectionChangeCommitted);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(235, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Título do DVD";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Código do DVD";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(27, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(75, 22);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(códigoLabel);
+            this.groupBox3.Controls.Add(this.códigoTextBox);
+            this.groupBox3.Controls.Add(código_ClienteLabel);
+            this.groupBox3.Controls.Add(this.código_ClienteTextBox);
+            this.groupBox3.Controls.Add(data_da_ReservaLabel);
+            this.groupBox3.Controls.Add(this.data_da_ReservaDateTimePicker);
+            this.groupBox3.Location = new System.Drawing.Point(20, 15);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(626, 219);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Informações da Reserva";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.clienteBindingSource;
+            this.comboBox3.DisplayMember = "Nome";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(238, 175);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(368, 24);
+            this.comboBox3.TabIndex = 7;
+            this.comboBox3.ValueMember = "Código Cliente";
+            this.comboBox3.SelectionChangeCommitted += new System.EventHandler(this.comboBox3_SelectionChangeCommitted);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(235, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Nome do Cliente";
+            // 
+            // códigoTextBox
+            // 
+            this.códigoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Código", true));
+            this.códigoTextBox.Location = new System.Drawing.Point(92, 43);
+            this.códigoTextBox.Name = "códigoTextBox";
+            this.códigoTextBox.ReadOnly = true;
+            this.códigoTextBox.Size = new System.Drawing.Size(75, 22);
+            this.códigoTextBox.TabIndex = 1;
+            // 
+            // reservaBindingSource
+            // 
+            this.reservaBindingSource.DataMember = "Reserva";
+            this.reservaBindingSource.DataSource = this.bD_LocadoraDataSet;
+            // 
+            // código_ClienteTextBox
+            // 
+            this.código_ClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Código Cliente", true));
+            this.código_ClienteTextBox.Location = new System.Drawing.Point(27, 175);
+            this.código_ClienteTextBox.Name = "código_ClienteTextBox";
+            this.código_ClienteTextBox.Size = new System.Drawing.Size(75, 22);
+            this.código_ClienteTextBox.TabIndex = 3;
+            this.código_ClienteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.código_ClienteTextBox_KeyPress);
+            // 
+            // data_da_ReservaDateTimePicker
+            // 
+            this.data_da_ReservaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "Data da Reserva", true));
+            this.data_da_ReservaDateTimePicker.Location = new System.Drawing.Point(27, 108);
+            this.data_da_ReservaDateTimePicker.Name = "data_da_ReservaDateTimePicker";
+            this.data_da_ReservaDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.data_da_ReservaDateTimePicker.TabIndex = 5;
+            // 
+            // clienteBindingSource1
+            // 
+            this.clienteBindingSource1.DataMember = "Cliente";
+            this.clienteBindingSource1.DataSource = this.bD_LocadoraDataSet1;
             // 
             // dVDBindingSource1
             // 
@@ -481,6 +779,7 @@
             this.tableAdapterManager.FornecedoresTableAdapter = null;
             this.tableAdapterManager.FuncionáriosTableAdapter = null;
             this.tableAdapterManager.ItemTableAdapter = this.itemTableAdapter;
+            this.tableAdapterManager.ItensReservaTableAdapter = null;
             this.tableAdapterManager.LocaçãoTableAdapter = this.locaçãoTableAdapter;
             this.tableAdapterManager.ReservaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -513,14 +812,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.locaçãoBindingNavigatorSaveItem});
-            this.locaçãoBindingNavigator.Location = new System.Drawing.Point(0, 556);
+            this.locaçãoBindingNavigator.Location = new System.Drawing.Point(0, 603);
             this.locaçãoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.locaçãoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.locaçãoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.locaçãoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.locaçãoBindingNavigator.Name = "locaçãoBindingNavigator";
             this.locaçãoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.locaçãoBindingNavigator.Size = new System.Drawing.Size(659, 25);
+            this.locaçãoBindingNavigator.Size = new System.Drawing.Size(672, 25);
             this.locaçãoBindingNavigator.TabIndex = 1;
             this.locaçãoBindingNavigator.Text = "bindingNavigator1";
             this.locaçãoBindingNavigator.Visible = false;
@@ -672,36 +971,19 @@
             this.bDLocadoraDataSet1BindingSource.DataSource = this.bD_LocadoraDataSet1;
             this.bDLocadoraDataSet1BindingSource.Position = 0;
             // 
-            // groupBox2
+            // reservaTableAdapter
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.itemDataGridView);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(14, 234);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 296);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cesta";
+            this.reservaTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // itensReservaTableAdapter
             // 
-            this.button1.Location = new System.Drawing.Point(17, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.itensReservaTableAdapter.ClearBeforeFill = true;
             // 
             // Form_locacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 620);
+            this.ClientSize = new System.Drawing.Size(672, 628);
             this.Controls.Add(this.locaçãoBindingNavigator);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -715,6 +997,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource4)).EndInit();
@@ -726,6 +1010,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaBindingSource)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locaçãoBindingNavigator)).EndInit();
@@ -733,8 +1028,6 @@
             this.locaçãoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDLocadoraDataSet1BindingSource)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -803,5 +1096,29 @@
         private System.Windows.Forms.BindingSource dVDBindingSource4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.BindingSource reservaBindingSource;
+        private BD_LocadoraDataSetTableAdapters.ReservaTableAdapter reservaTableAdapter;
+        private System.Windows.Forms.TextBox códigoTextBox;
+        private System.Windows.Forms.TextBox código_ClienteTextBox;
+        private System.Windows.Forms.DateTimePicker data_da_ReservaDateTimePicker;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource clienteBindingSource1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.BindingSource itensReservaBindingSource;
+        private BD_LocadoraDataSetTableAdapters.ItensReservaTableAdapter itensReservaTableAdapter;
+        private System.Windows.Forms.DataGridView itensReservaDataGridView;
+        private System.Windows.Forms.Button button2;
+        private BD_LocadoraDataSet bD_LocadoraDataSet2;
+        private System.Windows.Forms.BindingSource dVDBindingSource6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -107,5 +107,45 @@ namespace Locadora_de_DVDs
         {
             this.dVDTableAdapter.FillByPesquisarDVD(bD_LocadoraDataSet.DVD, textBox8.Text);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            toolStripButton14_Click(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorDeleteItem_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.dVDBindingSource.MoveLast();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.dVDBindingSource.MoveNext();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.dVDBindingSource.MovePrevious();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.dVDBindingSource.MoveFirst();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dVDBindingNavigatorSaveItem_Click(sender, e);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.dVDBindingSource.AddNew();
+        }
     }
 }
