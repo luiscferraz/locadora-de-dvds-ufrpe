@@ -51,7 +51,7 @@ namespace Locadora_de_DVDs
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Cliente' table. You can move, or remove it, as needed.
             this.clienteTableAdapter.Fill(this.bD_LocadoraDataSet.Cliente);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter.Fill(this.bD_LocadoraDataSet.Item);
+            //this.itemTableAdapter.Fill(this.bD_LocadoraDataSet.Item);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Locação' table. You can move, or remove it, as needed.
             this.locaçãoTableAdapter.Fill(this.bD_LocadoraDataSet.Locação);
 
@@ -93,6 +93,13 @@ namespace Locadora_de_DVDs
                 {
                     locaçãoBindingNavigatorSaveItem_Click(sender, e);
                     MessageBox.Show("Locação realizada com sucesso!", "Locação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (itemDataGridView.RowCount > 1)
+                    {
+                        for (int i = 0; i <= itemDataGridView.RowCount + 1; i++)
+                        {
+                            this.itemBindingSource.RemoveCurrent();
+                        }
+                    }
                 }
                 else
                 {
@@ -236,13 +243,6 @@ namespace Locadora_de_DVDs
             this.itensReservaBindingSource.RemoveCurrent();
         }
 
-        private void ReservaSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.reservaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(código_ClienteTextBox.Text) || string.IsNullOrEmpty(comboBox3.Text))
@@ -253,7 +253,9 @@ namespace Locadora_de_DVDs
             {
                 if (itensReservaDataGridView.RowCount > 1)
                 {
-                    ReservaSaveItem_Click(sender, e);
+                    reservaBindingSource.EndEdit();
+                    tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
+                    
                     MessageBox.Show("Reserva realizada com sucesso!", "Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -278,6 +280,66 @@ namespace Locadora_de_DVDs
                 }
             }
             
+        }
+
+        //---------------------------------------------------------DEVOLUCAO------------------------------------------------
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int countcliente;
+            
+            if (e.KeyChar == 13)
+            {
+                countcliente = this.clienteTableAdapter.FillByCodigoCliente(this.bD_LocadoraDataSet.Cliente, Convert.ToInt32(textBox3.Text));
+
+                if (countcliente == 1)
+                {
+                    textBox4.Text = this.bD_LocadoraDataSet.Cliente.FindByCódigo_Cliente(Convert.ToInt32(textBox3.Text)).Nome;
+
+                    int nloc = itemTableAdapter.FillByCodigoCliente(this.bD_LocadoraDataSet.Item, Convert.ToInt32(textBox3.Text));
+
+                    if (nloc == 0)
+                    {
+                        MessageBox.Show("Cliente não possui locações pendentes!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    textBox4.Clear();
+                    bD_LocadoraDataSet.Item.Clear();
+                    MessageBox.Show("Cliente não existe!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new Form_devoluçãopesqcliente(this).ShowDialog();
+        }
+
+        public void setCodigoCliente(int codigo, String nome)
+        {
+            textBox3.Text = codigo.ToString();
+            textBox4.Text = nome;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < itemDataGridView.Rows.Count; i++)
+            {
+                if (bool.Parse(itemDataGridView[0, i].EditedFormattedValue.ToString()))
+                {
+                    itemDataGridView[7, 1].Value = dateTimePicker1.Value.ToShortDateString();
+                }
+
+            }
+
+            itemBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
+            MessageBox.Show("Devolução efetuada com sucesso!", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Dispose();
         }
 
     }

@@ -3448,6 +3448,8 @@ namespace Locadora_de_DVDs {
             
             private global::System.Data.DataColumn columnNº_de_Cópias_Disponíveis;
             
+            private global::System.Data.DataColumn columnData_da_Devolução;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ItemDataTable() {
@@ -3531,6 +3533,14 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Data_da_DevoluçãoColumn {
+                get {
+                    return this.columnData_da_Devolução;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3566,7 +3576,7 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ItemRow AddItemRow(LocaçãoRow parentLocaçãoRowByLocaçãoItem, DVDRow parentDVDRowByDVDItem, DVDRow parentDVDRowByDVDItem1, string Classificação, int Nº_de_Cópias_Disponíveis) {
+            public ItemRow AddItemRow(LocaçãoRow parentLocaçãoRowByLocaçãoItem, DVDRow parentDVDRowByDVDItem, DVDRow parentDVDRowByDVDItem1, string Classificação, int Nº_de_Cópias_Disponíveis, string Data_da_Devolução) {
                 ItemRow rowItemRow = ((ItemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3574,7 +3584,8 @@ namespace Locadora_de_DVDs {
                         null,
                         null,
                         Classificação,
-                        Nº_de_Cópias_Disponíveis};
+                        Nº_de_Cópias_Disponíveis,
+                        Data_da_Devolução};
                 if ((parentLocaçãoRowByLocaçãoItem != null)) {
                     columnValuesArray[1] = parentLocaçãoRowByLocaçãoItem[0];
                 }
@@ -3619,6 +3630,7 @@ namespace Locadora_de_DVDs {
                 this.columnPreço = base.Columns["Preço"];
                 this.columnClassificação = base.Columns["Classificação"];
                 this.columnNº_de_Cópias_Disponíveis = base.Columns["Nº de Cópias Disponíveis"];
+                this.columnData_da_Devolução = base.Columns["Data da Devolução"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3636,6 +3648,8 @@ namespace Locadora_de_DVDs {
                 base.Columns.Add(this.columnClassificação);
                 this.columnNº_de_Cópias_Disponíveis = new global::System.Data.DataColumn("Nº de Cópias Disponíveis", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNº_de_Cópias_Disponíveis);
+                this.columnData_da_Devolução = new global::System.Data.DataColumn("Data da Devolução", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_da_Devolução);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCódigo_Item}, true));
                 this.columnCódigo_Item.AutoIncrement = true;
@@ -3645,6 +3659,7 @@ namespace Locadora_de_DVDs {
                 this.columnCódigo_Item.Unique = true;
                 this.columnPreço.MaxLength = 255;
                 this.columnClassificação.MaxLength = 255;
+                this.columnData_da_Devolução.MaxLength = 255;
                 this.ExtendedProperties.Add("Generator_RowClassName", "ItemRow");
                 this.ExtendedProperties.Add("Generator_RowEvArgName", "ItemRowChangeEvent");
                 this.ExtendedProperties.Add("Generator_RowEvHandlerName", "ItemRowChangeEventHandler");
@@ -6794,6 +6809,22 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Data_da_Devolução {
+                get {
+                    try {
+                        return ((string)(this[this.tableItem.Data_da_DevoluçãoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data da Devolução\' in table \'Item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableItem.Data_da_DevoluçãoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DVDRow DVDRow {
                 get {
                     return ((DVDRow)(this.GetParentRow(this.Table.ParentRelations["DVDItem"])));
@@ -6883,6 +6914,18 @@ namespace Locadora_de_DVDs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNº_de_Cópias_DisponíveisNull() {
                 this[this.tableItem.Nº_de_Cópias_DisponíveisColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsData_da_DevoluçãoNull() {
+                return this.IsNull(this.tableItem.Data_da_DevoluçãoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetData_da_DevoluçãoNull() {
+                this[this.tableItem.Data_da_DevoluçãoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8323,7 +8366,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Código Cliente], Nome, RG, CPF, Endereço, Bairro, Cidade, Telefone, [E-Ma" +
@@ -8332,9 +8375,15 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        [Código Cliente], Nome, RG, CPF, Endereço, Bairro, Cidade, Telefone" +
-                ", [E-Mail]\r\nFROM            Cliente\r\nWHERE        (Nome LIKE \'%\' + ? + \'%\')";
+                ", [E-Mail]\r\nFROM            Cliente\r\nWHERE        ([Código Cliente] = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nome", global::System.Data.OleDb.OleDbType.WChar, 100, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nome", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_Cliente", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Cliente", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        [Código Cliente], Nome, RG, CPF, Endereço, Bairro, Cidade, Telefone" +
+                ", [E-Mail]\r\nFROM            Cliente\r\nWHERE        (Nome LIKE \'%\' + ? + \'%\')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nome", global::System.Data.OleDb.OleDbType.WChar, 100, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nome", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8365,8 +8414,34 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPesquisarCliente(BD_LocadoraDataSet.ClienteDataTable dataTable, string Nome) {
+        public virtual int FillByCodigoCliente(BD_LocadoraDataSet.ClienteDataTable dataTable, int Código_Cliente) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Código_Cliente));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BD_LocadoraDataSet.ClienteDataTable GetDataByCodigoCliente(int Código_Cliente) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Código_Cliente));
+            BD_LocadoraDataSet.ClienteDataTable dataTable = new BD_LocadoraDataSet.ClienteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPesquisarCliente(BD_LocadoraDataSet.ClienteDataTable dataTable, string Nome) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Nome == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8385,7 +8460,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BD_LocadoraDataSet.ClienteDataTable GetDataByPesquisarCliente(string Nome) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Nome == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -12251,10 +12326,11 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Preço", "Preço");
             tableMapping.ColumnMappings.Add("Classificação", "Classificação");
             tableMapping.ColumnMappings.Add("Nº de Cópias Disponíveis", "Nº de Cópias Disponíveis");
+            tableMapping.ColumnMappings.Add("Data da Devolução", "Data da Devolução");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Item` WHERE ((`Código Item` = ?) AND ((? = 1 AND `Código Locação` IS NULL) OR (`Código Locação` = ?)) AND ((? = 1 AND `Código DVD` IS NULL) OR (`Código DVD` = ?)) AND ((? = 1 AND `Preço` IS NULL) OR (`Preço` = ?)) AND ((? = 1 AND `Classificação` IS NULL) OR (`Classificação` = ?)) AND ((? = 1 AND `Nº de Cópias Disponíveis` IS NULL) OR (`Nº de Cópias Disponíveis` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Item` WHERE ((`Código Item` = ?) AND ((? = 1 AND `Código Locação` IS NULL) OR (`Código Locação` = ?)) AND ((? = 1 AND `Código DVD` IS NULL) OR (`Código DVD` = ?)) AND ((? = 1 AND `Preço` IS NULL) OR (`Preço` = ?)) AND ((? = 1 AND `Classificação` IS NULL) OR (`Classificação` = ?)) AND ((? = 1 AND `Nº de Cópias Disponíveis` IS NULL) OR (`Nº de Cópias Disponíveis` = ?)) AND ((? = 1 AND `Data da Devolução` IS NULL) OR (`Data da Devolução` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Código_Item", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Item", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Código_Locação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Locação", global::System.Data.DataRowVersion.Original, true, null));
@@ -12267,25 +12343,29 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Data_da_Devolução", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Data_da_Devolução", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Item` (`Código Locação`, `Código DVD`, `Preço`, `Classificação`, `Nº" +
-                " de Cópias Disponíveis`) VALUES (?, ?, ?, ?, ?)";
+                " de Cópias Disponíveis`, `Data da Devolução`) VALUES (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_Locação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Locação", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_DVD", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código DVD", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Preço", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Preço", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Data_da_Devolução", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Item` SET `Código Locação` = ?, `Código DVD` = ?, `Preço` = ?, `Classificação` = ?, `Nº de Cópias Disponíveis` = ? WHERE ((`Código Item` = ?) AND ((? = 1 AND `Código Locação` IS NULL) OR (`Código Locação` = ?)) AND ((? = 1 AND `Código DVD` IS NULL) OR (`Código DVD` = ?)) AND ((? = 1 AND `Preço` IS NULL) OR (`Preço` = ?)) AND ((? = 1 AND `Classificação` IS NULL) OR (`Classificação` = ?)) AND ((? = 1 AND `Nº de Cópias Disponíveis` IS NULL) OR (`Nº de Cópias Disponíveis` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Item` SET `Código Locação` = ?, `Código DVD` = ?, `Preço` = ?, `Classificação` = ?, `Nº de Cópias Disponíveis` = ?, `Data da Devolução` = ? WHERE ((`Código Item` = ?) AND ((? = 1 AND `Código Locação` IS NULL) OR (`Código Locação` = ?)) AND ((? = 1 AND `Código DVD` IS NULL) OR (`Código DVD` = ?)) AND ((? = 1 AND `Preço` IS NULL) OR (`Preço` = ?)) AND ((? = 1 AND `Classificação` IS NULL) OR (`Classificação` = ?)) AND ((? = 1 AND `Nº de Cópias Disponíveis` IS NULL) OR (`Nº de Cópias Disponíveis` = ?)) AND ((? = 1 AND `Data da Devolução` IS NULL) OR (`Data da Devolução` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_Locação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Locação", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_DVD", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código DVD", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Preço", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Preço", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Data_da_Devolução", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Código_Item", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Item", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Código_Locação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Locação", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Código_Locação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Locação", global::System.Data.DataRowVersion.Original, false, null));
@@ -12297,6 +12377,8 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Data_da_Devolução", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Data_da_Devolução", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Data da Devolução", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12309,16 +12391,25 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Código Item], [Código Locação], [Código DVD], Preço, Classificação, [Nº d" +
-                "e Cópias Disponíveis] FROM Item";
+                "e Cópias Disponíveis], [Data da Devolução] FROM Item";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        SUM(Preço) AS Expr1\r\nFROM            Item";
+            this._commandCollection[1].CommandText = @"SELECT        Item.[Código Item], Item.[Código Locação], Item.[Código DVD], Item.Preço, Item.Classificação, Item.[Nº de Cópias Disponíveis], Item.[Data da Devolução]
+FROM            ((Item INNER JOIN
+                         Locação ON Locação.[Código Locação] = Item.[Código Locação]) INNER JOIN
+                         Cliente ON Cliente.[Código Cliente] = Locação.[Código do Cliente])
+WHERE        (Cliente.[Código Cliente] = ?) AND (Item.[Data da Devolução] IS NULL)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_Cliente", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código Cliente", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        SUM(Preço) AS Expr1\r\nFROM            Item";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12340,6 +12431,32 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BD_LocadoraDataSet.ItemDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BD_LocadoraDataSet.ItemDataTable dataTable = new BD_LocadoraDataSet.ItemDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCodigoCliente(BD_LocadoraDataSet.ItemDataTable dataTable, int Código_Cliente) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Código_Cliente));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BD_LocadoraDataSet.ItemDataTable GetDataByCodigoCliente(int Código_Cliente) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Código_Cliente));
             BD_LocadoraDataSet.ItemDataTable dataTable = new BD_LocadoraDataSet.ItemDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -12378,7 +12495,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Código_Item, global::System.Nullable<int> Original_Código_Locação, global::System.Nullable<int> Original_Código_DVD, global::System.Nullable<int> Original_Preço, string Original_Classificação, global::System.Nullable<int> Original_Nº_de_Cópias_Disponíveis) {
+        public virtual int Delete(int Original_Código_Item, global::System.Nullable<int> Original_Código_Locação, global::System.Nullable<int> Original_Código_DVD, global::System.Nullable<int> Original_Preço, string Original_Classificação, global::System.Nullable<int> Original_Nº_de_Cópias_Disponíveis, string Original_Data_da_Devolução) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Código_Item));
             if ((Original_Código_Locação.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -12420,6 +12537,14 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_Data_da_Devolução == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Data_da_Devolução));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12440,7 +12565,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Código_Locação, global::System.Nullable<int> Código_DVD, global::System.Nullable<int> Preço, string Classificação, global::System.Nullable<int> Nº_de_Cópias_Disponíveis) {
+        public virtual int Insert(global::System.Nullable<int> Código_Locação, global::System.Nullable<int> Código_DVD, global::System.Nullable<int> Preço, string Classificação, global::System.Nullable<int> Nº_de_Cópias_Disponíveis, string Data_da_Devolução) {
             if ((Código_Locação.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Código_Locação.Value));
             }
@@ -12471,6 +12596,12 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((Data_da_Devolução == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Data_da_Devolução));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12491,7 +12622,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Código_Locação, global::System.Nullable<int> Código_DVD, global::System.Nullable<int> Preço, string Classificação, global::System.Nullable<int> Nº_de_Cópias_Disponíveis, int Original_Código_Item, global::System.Nullable<int> Original_Código_Locação, global::System.Nullable<int> Original_Código_DVD, global::System.Nullable<int> Original_Preço, string Original_Classificação, global::System.Nullable<int> Original_Nº_de_Cópias_Disponíveis) {
+        public virtual int Update(global::System.Nullable<int> Código_Locação, global::System.Nullable<int> Código_DVD, global::System.Nullable<int> Preço, string Classificação, global::System.Nullable<int> Nº_de_Cópias_Disponíveis, string Data_da_Devolução, int Original_Código_Item, global::System.Nullable<int> Original_Código_Locação, global::System.Nullable<int> Original_Código_DVD, global::System.Nullable<int> Original_Preço, string Original_Classificação, global::System.Nullable<int> Original_Nº_de_Cópias_Disponíveis, string Original_Data_da_Devolução) {
             if ((Código_Locação.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Código_Locação.Value));
             }
@@ -12522,46 +12653,60 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Código_Item));
-            if ((Original_Código_Locação.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Código_Locação.Value));
+            if ((Data_da_Devolução == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Data_da_Devolução));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Código_Item));
+            if ((Original_Código_Locação.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Código_Locação.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_Código_DVD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Código_DVD.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Código_DVD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_Preço.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Preço.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Preço.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Classificação == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Classificação));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Classificação));
             }
             if ((Original_Nº_de_Cópias_Disponíveis.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Nº_de_Cópias_Disponíveis.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Nº_de_Cópias_Disponíveis.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Data_da_Devolução == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Data_da_Devolução));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12583,7 +12728,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<double> ItemSomaPreço() {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
