@@ -72,7 +72,15 @@
             this.preço_TotalTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.itemDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Devolver = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.códigoItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.códigoLocaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.códigoDVDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dVDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classificaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDaDevoluçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -145,14 +153,6 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Devolver = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.códigoItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.códigoLocaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.códigoDVDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classificaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDaDevoluçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             código_do_ClienteLabel = new System.Windows.Forms.Label();
             data_da_LocaçãoLabel = new System.Windows.Forms.Label();
             data_da_DevoluçãoLabel = new System.Windows.Forms.Label();
@@ -248,6 +248,7 @@
             situaçãoLabel.Size = new System.Drawing.Size(64, 16);
             situaçãoLabel.TabIndex = 26;
             situaçãoLabel.Text = "Situação:";
+            situaçãoLabel.Visible = false;
             // 
             // códigoLabel
             // 
@@ -304,6 +305,7 @@
             this.tabPage1.Size = new System.Drawing.Size(664, 599);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Locação";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox2
             // 
@@ -468,6 +470,7 @@
             this.situaçãoTextBox.Name = "situaçãoTextBox";
             this.situaçãoTextBox.Size = new System.Drawing.Size(139, 22);
             this.situaçãoTextBox.TabIndex = 27;
+            this.situaçãoTextBox.Visible = false;
             // 
             // groupBox1
             // 
@@ -592,10 +595,69 @@
             this.itemDataGridView1.Size = new System.Drawing.Size(524, 220);
             this.itemDataGridView1.TabIndex = 2;
             // 
+            // Devolver
+            // 
+            this.Devolver.HeaderText = "Devolver";
+            this.Devolver.Name = "Devolver";
+            // 
+            // códigoItemDataGridViewTextBoxColumn
+            // 
+            this.códigoItemDataGridViewTextBoxColumn.DataPropertyName = "Código Item";
+            this.códigoItemDataGridViewTextBoxColumn.HeaderText = "Código Item";
+            this.códigoItemDataGridViewTextBoxColumn.Name = "códigoItemDataGridViewTextBoxColumn";
+            this.códigoItemDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // códigoLocaçãoDataGridViewTextBoxColumn
+            // 
+            this.códigoLocaçãoDataGridViewTextBoxColumn.DataPropertyName = "Código Locação";
+            this.códigoLocaçãoDataGridViewTextBoxColumn.HeaderText = "Código Locação";
+            this.códigoLocaçãoDataGridViewTextBoxColumn.Name = "códigoLocaçãoDataGridViewTextBoxColumn";
+            this.códigoLocaçãoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // códigoDVDDataGridViewTextBoxColumn
+            // 
+            this.códigoDVDDataGridViewTextBoxColumn.DataPropertyName = "Código DVD";
+            this.códigoDVDDataGridViewTextBoxColumn.DataSource = this.dVDBindingSource;
+            this.códigoDVDDataGridViewTextBoxColumn.DisplayMember = "Título";
+            this.códigoDVDDataGridViewTextBoxColumn.HeaderText = "DVD";
+            this.códigoDVDDataGridViewTextBoxColumn.Name = "códigoDVDDataGridViewTextBoxColumn";
+            this.códigoDVDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.códigoDVDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.códigoDVDDataGridViewTextBoxColumn.ValueMember = "Código DVD";
+            this.códigoDVDDataGridViewTextBoxColumn.Width = 380;
+            // 
             // dVDBindingSource
             // 
             this.dVDBindingSource.DataMember = "DVD";
             this.dVDBindingSource.DataSource = this.bD_LocadoraDataSet;
+            // 
+            // preçoDataGridViewTextBoxColumn
+            // 
+            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
+            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
+            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
+            this.preçoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // classificaçãoDataGridViewTextBoxColumn
+            // 
+            this.classificaçãoDataGridViewTextBoxColumn.DataPropertyName = "Classificação";
+            this.classificaçãoDataGridViewTextBoxColumn.HeaderText = "Classificação";
+            this.classificaçãoDataGridViewTextBoxColumn.Name = "classificaçãoDataGridViewTextBoxColumn";
+            this.classificaçãoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nºDeCópiasDisponíveisDataGridViewTextBoxColumn
+            // 
+            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.DataPropertyName = "Nº de Cópias Disponíveis";
+            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.HeaderText = "Nº de Cópias Disponíveis";
+            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.Name = "nºDeCópiasDisponíveisDataGridViewTextBoxColumn";
+            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataDaDevoluçãoDataGridViewTextBoxColumn
+            // 
+            this.dataDaDevoluçãoDataGridViewTextBoxColumn.DataPropertyName = "Data da Devolução";
+            this.dataDaDevoluçãoDataGridViewTextBoxColumn.HeaderText = "Data da Devolução";
+            this.dataDaDevoluçãoDataGridViewTextBoxColumn.Name = "dataDaDevoluçãoDataGridViewTextBoxColumn";
+            this.dataDaDevoluçãoDataGridViewTextBoxColumn.Visible = false;
             // 
             // button6
             // 
@@ -1213,65 +1275,6 @@
             this.dataGridViewTextBoxColumn23.HeaderText = "Nº de Cópias Disponíveis";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.Visible = false;
-            // 
-            // Devolver
-            // 
-            this.Devolver.HeaderText = "Devolver";
-            this.Devolver.Name = "Devolver";
-            // 
-            // códigoItemDataGridViewTextBoxColumn
-            // 
-            this.códigoItemDataGridViewTextBoxColumn.DataPropertyName = "Código Item";
-            this.códigoItemDataGridViewTextBoxColumn.HeaderText = "Código Item";
-            this.códigoItemDataGridViewTextBoxColumn.Name = "códigoItemDataGridViewTextBoxColumn";
-            this.códigoItemDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // códigoLocaçãoDataGridViewTextBoxColumn
-            // 
-            this.códigoLocaçãoDataGridViewTextBoxColumn.DataPropertyName = "Código Locação";
-            this.códigoLocaçãoDataGridViewTextBoxColumn.HeaderText = "Código Locação";
-            this.códigoLocaçãoDataGridViewTextBoxColumn.Name = "códigoLocaçãoDataGridViewTextBoxColumn";
-            this.códigoLocaçãoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // códigoDVDDataGridViewTextBoxColumn
-            // 
-            this.códigoDVDDataGridViewTextBoxColumn.DataPropertyName = "Código DVD";
-            this.códigoDVDDataGridViewTextBoxColumn.DataSource = this.dVDBindingSource;
-            this.códigoDVDDataGridViewTextBoxColumn.DisplayMember = "Título";
-            this.códigoDVDDataGridViewTextBoxColumn.HeaderText = "DVD";
-            this.códigoDVDDataGridViewTextBoxColumn.Name = "códigoDVDDataGridViewTextBoxColumn";
-            this.códigoDVDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.códigoDVDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.códigoDVDDataGridViewTextBoxColumn.ValueMember = "Código DVD";
-            this.códigoDVDDataGridViewTextBoxColumn.Width = 380;
-            // 
-            // preçoDataGridViewTextBoxColumn
-            // 
-            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
-            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
-            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
-            this.preçoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // classificaçãoDataGridViewTextBoxColumn
-            // 
-            this.classificaçãoDataGridViewTextBoxColumn.DataPropertyName = "Classificação";
-            this.classificaçãoDataGridViewTextBoxColumn.HeaderText = "Classificação";
-            this.classificaçãoDataGridViewTextBoxColumn.Name = "classificaçãoDataGridViewTextBoxColumn";
-            this.classificaçãoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nºDeCópiasDisponíveisDataGridViewTextBoxColumn
-            // 
-            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.DataPropertyName = "Nº de Cópias Disponíveis";
-            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.HeaderText = "Nº de Cópias Disponíveis";
-            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.Name = "nºDeCópiasDisponíveisDataGridViewTextBoxColumn";
-            this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dataDaDevoluçãoDataGridViewTextBoxColumn
-            // 
-            this.dataDaDevoluçãoDataGridViewTextBoxColumn.DataPropertyName = "Data da Devolução";
-            this.dataDaDevoluçãoDataGridViewTextBoxColumn.HeaderText = "Data da Devolução";
-            this.dataDaDevoluçãoDataGridViewTextBoxColumn.Name = "dataDaDevoluçãoDataGridViewTextBoxColumn";
-            this.dataDaDevoluçãoDataGridViewTextBoxColumn.Visible = false;
             // 
             // Form_locacao
             // 
