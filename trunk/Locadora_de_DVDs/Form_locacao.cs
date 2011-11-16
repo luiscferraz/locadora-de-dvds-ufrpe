@@ -341,6 +341,6 @@ namespace Locadora_de_DVDs
             MessageBox.Show("Devolução efetuada com sucesso!", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Dispose();
         }
-
     }
 }
+
