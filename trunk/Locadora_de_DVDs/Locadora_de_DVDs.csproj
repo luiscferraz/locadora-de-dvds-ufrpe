@@ -59,11 +59,29 @@
     <Compile Include="Form_acervo.Designer.cs">
       <DependentUpon>Form_acervo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Acesso_Contas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Acesso_Contas.Designer.cs">
+      <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_cliente.Designer.cs">
       <DependentUpon>Form_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Contas_Pagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Contas_Pagar.Designer.cs">
+      <DependentUpon>Form_Contas_Pagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Contas_Receber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Contas_Receber.Designer.cs">
+      <DependentUpon>Form_Contas_Receber.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_devoluçãopesqcliente.cs">
       <SubType>Form</SubType>
@@ -112,8 +130,17 @@
     <EmbeddedResource Include="Form_acervo.resx">
       <DependentUpon>Form_acervo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Acesso_Contas.resx">
+      <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_cliente.resx">
       <DependentUpon>Form_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Contas_Pagar.resx">
+      <DependentUpon>Form_Contas_Pagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Contas_Receber.resx">
+      <DependentUpon>Form_Contas_Receber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_devoluçãopesqcliente.resx">
       <DependentUpon>Form_devoluçãopesqcliente.cs</DependentUpon>
