@@ -51,5 +51,11 @@ namespace Locadora_de_DVDs
         {
             new Form_funcionarios().ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_Acesso_Contas fm = new Form_Acesso_Contas() ;
+            fm.Show() ;
+        }
     }
 }
