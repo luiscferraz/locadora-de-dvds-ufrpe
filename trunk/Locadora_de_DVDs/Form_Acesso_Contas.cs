@@ -27,7 +27,7 @@ namespace Locadora_de_DVDs
         {
             Form_Contas_Receber fm = new Form_Contas_Receber();
             fm.Show();
-            this.Visible = false
+            this.Visible = false;
         }
 
     }
