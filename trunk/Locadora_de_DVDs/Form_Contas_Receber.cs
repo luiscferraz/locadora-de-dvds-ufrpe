@@ -89,6 +89,17 @@ namespace Locadora_de_DVDs
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.contas_a_ReceberBindingSource.AddNew();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            contas_a_ReceberBindingNavigatorSaveItem_Click(sender, e);
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.contas_a_ReceberBindingSource.MoveFirst();
@@ -119,14 +130,5 @@ namespace Locadora_de_DVDs
             toolStripButton14_Click(sender, e);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.contas_a_ReceberBindingSource.AddNew();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            contas_a_ReceberBindingNavigatorSaveItem_Click(sender, e);
-        }
     }
 }
