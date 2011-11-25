@@ -20,12 +20,15 @@ namespace Locadora_de_DVDs
         {
             Form_Contas_Pagar fm = new Form_Contas_Pagar();
             fm.Show();
+            this.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form_Contas_Receber fm = new Form_Contas_Receber();
             fm.Show();
+            this.Visible = false
         }
+
     }
 }

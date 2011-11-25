@@ -18,39 +18,42 @@ namespace Locadora_de_DVDs
 
         private void contas_a_ReceberBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.contas_a_ReceberBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-
+            if (string.IsNullOrEmpty(devedorTextBox.Text) || string.IsNullOrEmpty(valorMaskedTextBox.Text) || string.IsNullOrEmpty(dataDateTimePicker.Text) || string.IsNullOrEmpty(vencimentoDateTimePicker.Text) || string.IsNullOrEmpty(forma_de_RecebimentoMaskedTextBox.Text) || string.IsNullOrEmpty(situaçãoTextBox.Text) || string.IsNullOrEmpty(descriçãoTextBox.Text))
+            {
+                MessageBox.Show("Preencha todos os campos", "Adicionar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                try
+                {
+                    this.Validate();
+                    this.contas_a_ReceberBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
+                    MessageBox.Show("Inclusão realizada com sucesso!", "Adicionar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet.Contas_a_Receber);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Falha ao salvar o registro!" + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-
         private void Form_Contas_Receber_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Contas_a_Receber' table. You can move, or remove it, as needed.
             this.contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet.Contas_a_Receber);
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.contas_a_ReceberBindingSource.AddNew();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            contas_a_ReceberBindingNavigatorSaveItem_Click(sender, e);
-        }
-
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (MessageBox.Show("Deseja excluir essa nota ?", "Excluir Nota", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja excluir essa Conta a Pagar ?", "Excluir Conta a Pagar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.Validate();
                     this.contas_a_ReceberBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-                    MessageBox.Show("Nota excluído com sucesso!", "Excluir Nota", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Conta a Pagar excluído com sucesso!", "Excluir Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet.Contas_a_Receber);
                 }
             }
@@ -66,19 +69,19 @@ namespace Locadora_de_DVDs
 
         private void toolStripButton14_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(devedorTextBox.Text) || string.IsNullOrEmpty(dataDateTimePicker.Text) || string.IsNullOrEmpty(vencimentoDateTimePicker.Text) || string.IsNullOrEmpty(forma_de_RecebimentoTextBox.Text) || string.IsNullOrEmpty(situaçãoTextBox.Text) || string.IsNullOrEmpty(descriçãoTextBox.Text) || string.IsNullOrEmpty(valorTextBox.Text))
+            if (string.IsNullOrEmpty(devedorTextBox.Text) || string.IsNullOrEmpty(valorMaskedTextBox.Text) || string.IsNullOrEmpty(dataDateTimePicker.Text) || string.IsNullOrEmpty(vencimentoDateTimePicker.Text) || string.IsNullOrEmpty(forma_de_RecebimentoMaskedTextBox.Text) || string.IsNullOrEmpty(situaçãoTextBox.Text) || string.IsNullOrEmpty(descriçãoTextBox.Text))
             {
-                MessageBox.Show("Preencha todos os campos", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Preencha todos os campos", "Adicionar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 try
                 {
                     this.Validate();
-                    this.contas_a_ReceberBindingSource.EndEdit();
+                    this. contas_a_ReceberBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-                    MessageBox.Show("Alteração realizada com sucesso!", "Alterar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet.Contas_a_Receber);
+                    MessageBox.Show("Alteração realizada com sucesso!", "Alterar Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this. contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet. Contas_a_Receber);
                 }
                 catch (Exception ex)
                 {
@@ -86,19 +89,19 @@ namespace Locadora_de_DVDs
                 }
             }
         }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            bindingNavigatorDeleteItem_Click(sender, e);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            contas_a_ReceberBindingNavigatorSaveItem_Click(sender, e);
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.contas_a_ReceberBindingSource.MoveFirst();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.contas_a_ReceberBindingSource.MovePrevious();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.contas_a_ReceberBindingSource.MoveNext();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -106,14 +109,24 @@ namespace Locadora_de_DVDs
             this.contas_a_ReceberBindingSource.MoveLast();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            this.contas_a_ReceberBindingSource.MoveLast();
+            bindingNavigatorDeleteItem_Click(sender, e);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-            this.contas_a_ReceberBindingSource.MoveNext();
+            toolStripButton14_Click(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.contas_a_ReceberBindingSource.AddNew();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            contas_a_ReceberBindingNavigatorSaveItem_Click(sender, e);
         }
     }
 }
