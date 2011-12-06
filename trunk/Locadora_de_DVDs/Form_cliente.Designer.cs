@@ -374,7 +374,8 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // bindingNavigator1
+            // bindingNavigator1//indicador
+
             // 
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.clienteBindingSource;
