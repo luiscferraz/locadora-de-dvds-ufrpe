@@ -144,3 +144,54 @@ Link ( )
 <br>*Consulta*
 
 *A1.* DVD não encontrado, retorna ao passo 1;
+
+===Número do Caso de Uso: UC0003===
+*Nome do caso de Uso:* Locação de DVD<br>
+*Objetivos:* Locar, Resevar e Devolver DVD's.<br>
+*Descrição:* Fazer as Ações de Locação de DVD's.<br>
+*Ator:* Usuário<br>
+*Prioridade:* Alta<br> 
+
+*Pré-condições:* Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
+
+*Pós-condições:* Locação de DVDs. Reserva. Devolução.
+
+===Cenários principais de sucesso:===
+
+*Locação de DVD*
+
+*1.* Usuário visualisa, através de uma lista, DVD´s que estão cadastrados no sistema e disponíveis para locação;
+*2.* Usuário Preenche formulário de locação para cliente;
+*3.* DVD é locado para cliente, e com data para devolução;
+*4.* DVD('s) selecionado(s) se torna indisponivel para locação.
+
+<br>*Reserva de DVD*
+
+*1.* Usuário visualisa, através de uma lista, DVD´s que estão cadastrados no sistema e disponíveis para locação;
+*2.* Usuário Preenche formulário de reserva para cliente;
+*3.* DVD é reservado para cliente, com validade para locação;
+*4.* DVD selecionado se torna indisponível para locação.
+*5.* Caso DVD não seja locado até a data de validade, o DVD volta a ser disponivel para todos;
+
+<br>*Devolução de DVD*
+
+*1.* O Usuário informa o código da locação;
+*2.* Os dados da locação são exibidos;
+*3.* O Usuário completa formulário de devolução de DVD;
+*4.* O DVD se torna disponível para locação.
+
+===Fluxos Alternativos:===
+
+*Locação de DVD*
+
+*A1.* Erro ao salvar o cadastro na base de dados: uma mensagem de erro é exibida, retornando ao passo 2;
+
+<br>*Reserva de DVD*
+
+*A1.* Erro ao salvar o cadastro na base de dados: uma mensagem de erro é exibida, retornando ao passo 2;
+
+<br>*Devolução de DVD*
+
+*A1.*Código da locação não encontrado, retorna ao passo 1;
+
+*A2.* Erro ao salvar o registro: uma mesagem de erro é exibida, retornando ao passo 3;
