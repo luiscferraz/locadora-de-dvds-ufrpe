@@ -3,4 +3,4 @@
 ===RNF001: Controle de acesso ao sistema.===
 ===RNF002: Compatibilidade com sistema operacional Windows XP, Vista, Seven.===
 ===RNF003: Armazenamento de dados em tabelas do Microsoft Access 2007 superior.===
-===RNF004: Compatibilidade com .net framework 3.5 ou superior
+===RNF004: Compatibilidade com .net framework 3.5 ou superior===
