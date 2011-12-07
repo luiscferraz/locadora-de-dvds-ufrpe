@@ -11,14 +11,14 @@ namespace Locadora_de_DVDs
 {
     public partial class Form_devoluçãopesqcliente : Form
     {
-        private Form_locacao formdevolucao;
+        private Form_Devolucao formdevolucao;
 
         public Form_devoluçãopesqcliente()
         {
             InitializeComponent();
         }
 
-        public Form_devoluçãopesqcliente(Form_locacao frm)
+        public Form_devoluçãopesqcliente(Form_Devolucao frm)
         {
             formdevolucao = frm;
             InitializeComponent();
