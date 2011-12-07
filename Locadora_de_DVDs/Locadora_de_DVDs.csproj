@@ -65,6 +65,12 @@
     <Compile Include="Form_Acesso_Contas.Designer.cs">
       <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Acesso_Locacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Acesso_Locacao.Designer.cs">
+      <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="Form_Contas_Receber.Designer.cs">
       <DependentUpon>Form_Contas_Receber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Devolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Devolucao.Designer.cs">
+      <DependentUpon>Form_Devolucao.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_devoluçãopesqcliente.cs">
       <SubType>Form</SubType>
@@ -101,11 +113,11 @@
     <Compile Include="Form_funcionarios.Designer.cs">
       <DependentUpon>Form_funcionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_locacao.cs">
+    <Compile Include="Form_Locacao_S.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_locacao.Designer.cs">
-      <DependentUpon>Form_locacao.cs</DependentUpon>
+    <Compile Include="Form_Locacao_S.Designer.cs">
+      <DependentUpon>Form_Locacao_S.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_login.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,12 @@
     </Compile>
     <Compile Include="Form_principal.Designer.cs">
       <DependentUpon>Form_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Reserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reserva.Designer.cs">
+      <DependentUpon>Form_Reserva.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_splash.cs">
       <SubType>Form</SubType>
@@ -133,6 +151,9 @@
     <EmbeddedResource Include="Form_Acesso_Contas.resx">
       <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Acesso_Locacao.resx">
+      <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_cliente.resx">
       <DependentUpon>Form_cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Contas_Receber.resx">
       <DependentUpon>Form_Contas_Receber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Devolucao.resx">
+      <DependentUpon>Form_Devolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_devoluçãopesqcliente.resx">
       <DependentUpon>Form_devoluçãopesqcliente.cs</DependentUpon>
@@ -151,14 +175,17 @@
     <EmbeddedResource Include="Form_funcionarios.resx">
       <DependentUpon>Form_funcionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_locacao.resx">
-      <DependentUpon>Form_locacao.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Locacao_S.resx">
+      <DependentUpon>Form_Locacao_S.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_principal.resx">
       <DependentUpon>Form_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reserva.resx">
+      <DependentUpon>Form_Reserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_splash.resx">
       <DependentUpon>Form_splash.cs</DependentUpon>

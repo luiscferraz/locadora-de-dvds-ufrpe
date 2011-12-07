@@ -44,7 +44,7 @@ namespace Locadora_de_DVDs
 
         private void bt_loc_dev_Click(object sender, EventArgs e)
         {
-            new Form_locacao().ShowDialog();
+            new Form_Acesso_Locacao().ShowDialog();
         }
 
         private void bt_funcionarios_Click(object sender, EventArgs e)
