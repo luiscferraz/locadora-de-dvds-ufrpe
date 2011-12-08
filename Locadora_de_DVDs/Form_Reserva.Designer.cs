@@ -42,17 +42,6 @@
             this.códigoTextBox = new System.Windows.Forms.TextBox();
             this.código_ClienteTextBox = new System.Windows.Forms.TextBox();
             this.data_da_ReservaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dVDBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.itensReservaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dVDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itensReservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservaTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ReservaTableAdapter();
             this.tableAdapterManager = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.TableAdapterManager();
@@ -77,6 +66,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dVDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dVDTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.DVDTableAdapter();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.itensReservaDataGridView = new System.Windows.Forms.DataGridView();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             códigoLabel = new System.Windows.Forms.Label();
             código_ClienteLabel = new System.Windows.Forms.Label();
             data_da_ReservaLabel = new System.Windows.Forms.Label();
@@ -85,14 +83,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensReservaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingNavigator)).BeginInit();
             this.reservaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // códigoLabel
@@ -152,7 +148,6 @@
             // 
             // código_ClienteComboBox
             // 
-            this.código_ClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Código Cliente", true));
             this.código_ClienteComboBox.DataSource = this.clienteBindingSource;
             this.código_ClienteComboBox.DisplayMember = "Nome";
             this.código_ClienteComboBox.FormattingEnabled = true;
@@ -204,111 +199,6 @@
             this.data_da_ReservaDateTimePicker.Name = "data_da_ReservaDateTimePicker";
             this.data_da_ReservaDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.data_da_ReservaDateTimePicker.TabIndex = 5;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.itensReservaDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(16, 273);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(642, 356);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Títulos";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(20, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.dVDBindingSource2;
-            this.comboBox1.DisplayMember = "Título";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(240, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(292, 24);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.ValueMember = "Código DVD";
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectionChangeCommitted);
-            // 
-            // dVDBindingSource2
-            // 
-            this.dVDBindingSource2.DataMember = "DVD";
-            this.dVDBindingSource2.DataSource = this.bD_LocadoraDataSet;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(20, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(237, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Título do DVD";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código do DVD";
-            // 
-            // itensReservaDataGridView
-            // 
-            this.itensReservaDataGridView.AllowUserToOrderColumns = true;
-            this.itensReservaDataGridView.AutoGenerateColumns = false;
-            this.itensReservaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itensReservaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewComboBoxColumn1,
-            this.dataGridViewTextBoxColumn1});
-            this.itensReservaDataGridView.DataSource = this.itensReservaBindingSource;
-            this.itensReservaDataGridView.Location = new System.Drawing.Point(20, 138);
-            this.itensReservaDataGridView.Name = "itensReservaDataGridView";
-            this.itensReservaDataGridView.Size = new System.Drawing.Size(592, 171);
-            this.itensReservaDataGridView.TabIndex = 4;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.DataPropertyName = "Código DVD";
-            this.dataGridViewComboBoxColumn1.DataSource = this.dVDBindingSource1;
-            this.dataGridViewComboBoxColumn1.DisplayMember = "Título";
-            this.dataGridViewComboBoxColumn1.HeaderText = "DVD";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.ValueMember = "Código DVD";
-            this.dataGridViewComboBoxColumn1.Width = 447;
-            // 
-            // dVDBindingSource1
-            // 
-            this.dVDBindingSource1.DataMember = "DVD";
-            this.dVDBindingSource1.DataSource = this.bD_LocadoraDataSet;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nº de Cópias Disponíveis";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nº de Cópias Disponíveis";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // itensReservaBindingSource
             // 
@@ -508,20 +398,115 @@
             // 
             this.dVDTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.itensReservaDataGridView);
+            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Location = new System.Drawing.Point(16, 337);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(642, 300);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Títulos";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Excluir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // itensReservaDataGridView
+            // 
+            this.itensReservaDataGridView.AutoGenerateColumns = false;
+            this.itensReservaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itensReservaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.itensReservaDataGridView.DataSource = this.itensReservaBindingSource;
+            this.itensReservaDataGridView.Location = new System.Drawing.Point(16, 96);
+            this.itensReservaDataGridView.Name = "itensReservaDataGridView";
+            this.itensReservaDataGridView.Size = new System.Drawing.Size(590, 152);
+            this.itensReservaDataGridView.TabIndex = 4;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.dVDBindingSource;
+            this.comboBox4.DisplayMember = "Título";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(238, 57);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(368, 24);
+            this.comboBox4.TabIndex = 3;
+            this.comboBox4.ValueMember = "Código DVD";
+            this.comboBox4.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectionChangeCommitted);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(235, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Título do DVD";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Código do DVD";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(27, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(75, 22);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Código DVD";
+            this.dataGridViewTextBoxColumn12.DataSource = this.dVDBindingSource;
+            this.dataGridViewTextBoxColumn12.DisplayMember = "Título";
+            this.dataGridViewTextBoxColumn12.HeaderText = "DVD";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn12.ValueMember = "Código DVD";
+            this.dataGridViewTextBoxColumn12.Width = 447;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Nº de Cópias Disponíveis";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Nº de Cópias Disponíveis";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
             // Form_Reserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 692);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.reservaBindingNavigator);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_Reserva";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Reserva";
             this.Load += new System.EventHandler(this.Form_Reserva_Load);
             this.groupBox1.ResumeLayout(false);
@@ -529,16 +514,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensReservaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingNavigator)).EndInit();
             this.reservaBindingNavigator.ResumeLayout(false);
             this.reservaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itensReservaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,7 +530,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private BD_LocadoraDataSet bD_LocadoraDataSet;
         private System.Windows.Forms.BindingSource reservaBindingSource;
         private BD_LocadoraDataSetTableAdapters.ReservaTableAdapter reservaTableAdapter;
@@ -571,23 +553,22 @@
         private System.Windows.Forms.ComboBox código_ClienteComboBox;
         private BD_LocadoraDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private BD_LocadoraDataSetTableAdapters.ItensReservaTableAdapter itensReservaTableAdapter;
         private System.Windows.Forms.BindingSource itensReservaBindingSource;
-        private System.Windows.Forms.DataGridView itensReservaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoItemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn DVD;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.BindingSource dVDBindingSource;
         private BD_LocadoraDataSetTableAdapters.DVDTableAdapter dVDTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.BindingSource dVDBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource dVDBindingSource2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView itensReservaDataGridView;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     }
 }

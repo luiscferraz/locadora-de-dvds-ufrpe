@@ -138,6 +138,7 @@
             this.bt_caixa.Size = new System.Drawing.Size(133, 140);
             this.bt_caixa.TabIndex = 55;
             this.bt_caixa.UseVisualStyleBackColor = true;
+            this.bt_caixa.Click += new System.EventHandler(this.bt_caixa_Click);
             // 
             // label5
             // 

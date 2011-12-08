@@ -67,6 +67,12 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.itemBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.itemDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ClienteTableAdapter();
+            this.dVDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dVDTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.DVDTableAdapter();
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.códigoItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,10 +82,6 @@
             this.classificaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nºDeCópiasDisponíveisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDaDevoluçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteTableAdapter = new Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters.ClienteTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
@@ -87,6 +89,7 @@
             this.itemBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -405,6 +408,41 @@
             this.itemDataGridView.Size = new System.Drawing.Size(545, 220);
             this.itemDataGridView.TabIndex = 26;
             // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Código Item";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Código Item";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(511, 560);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 40);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Devolver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.bD_LocadoraDataSet;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // dVDBindingSource
+            // 
+            this.dVDBindingSource.DataMember = "DVD";
+            this.dVDBindingSource.DataSource = this.bD_LocadoraDataSet;
+            // 
+            // dVDTableAdapter
+            // 
+            this.dVDTableAdapter.ClearBeforeFill = true;
+            // 
             // Column4
             // 
             this.Column4.HeaderText = "Devolver";
@@ -413,8 +451,11 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "Código DVD";
+            this.Column3.DataSource = this.dVDBindingSource;
+            this.Column3.DisplayMember = "Título";
             this.Column3.HeaderText = "DVD";
             this.Column3.Name = "Column3";
+            this.Column3.ValueMember = "Código DVD";
             this.Column3.Width = 400;
             // 
             // códigoItemDataGridViewTextBoxColumn
@@ -459,32 +500,6 @@
             this.dataDaDevoluçãoDataGridViewTextBoxColumn.HeaderText = "Data da Devolução";
             this.dataDaDevoluçãoDataGridViewTextBoxColumn.Name = "dataDaDevoluçãoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Código Item";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Código Item";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(511, 560);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 40);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Devolver";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.bD_LocadoraDataSet;
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
             // Form_Devolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,6 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_Devolucao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Devolução";
             this.Load += new System.EventHandler(this.Form_Devolucao_Load);
             this.groupBox1.ResumeLayout(false);
@@ -509,6 +525,7 @@
             this.itemBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,10 +570,14 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton itemBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView itemDataGridView;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private BD_LocadoraDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.BindingSource dVDBindingSource;
+        private BD_LocadoraDataSetTableAdapters.DVDTableAdapter dVDTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoItemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoLocaçãoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoDVDDataGridViewTextBoxColumn;
@@ -564,7 +585,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn classificaçãoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nºDeCópiasDisponíveisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDaDevoluçãoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource clienteBindingSource;
-        private BD_LocadoraDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
     }
 }

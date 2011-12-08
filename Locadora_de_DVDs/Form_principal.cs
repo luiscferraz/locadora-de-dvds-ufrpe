@@ -57,5 +57,10 @@ namespace Locadora_de_DVDs
             Form_Acesso_Contas fm = new Form_Acesso_Contas() ;
             fm.Show() ;
         }
+
+        private void bt_caixa_Click(object sender, EventArgs e)
+        {
+            new Form_Caixa().ShowDialog();
+        }
     }
 }

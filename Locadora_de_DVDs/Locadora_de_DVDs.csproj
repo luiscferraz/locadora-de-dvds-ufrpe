@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_LocadoraDataSet.cs">
+      <DependentUpon>BD_LocadoraDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BD_LocadoraDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +74,12 @@
     </Compile>
     <Compile Include="Form_Acesso_Locacao.Designer.cs">
       <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Caixa.Designer.cs">
+      <DependentUpon>Form_Caixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_cliente.cs">
       <SubType>Form</SubType>
@@ -153,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Acesso_Locacao.resx">
       <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Caixa.resx">
+      <DependentUpon>Form_Caixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_cliente.resx">
       <DependentUpon>Form_cliente.cs</DependentUpon>

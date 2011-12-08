@@ -52,10 +52,10 @@ namespace Locadora_de_DVDs
             {
                 if (MessageBox.Show("Deseja excluir essa Conta a Pagar ?", "Excluir Conta a Pagar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    MessageBox.Show("Conta a Pagar excluído com sucesso!", "Excluir Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Validate();
                     this.contas_a_PagarBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-                    MessageBox.Show("Conta a Pagar excluído com sucesso!", "Excluir Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.contas_a_PagarTableAdapter.Fill(this.bD_LocadoraDataSet.Contas_a_Pagar);
                 }
             }
@@ -130,7 +130,6 @@ namespace Locadora_de_DVDs
         private void button2_Click(object sender, EventArgs e)
         {
             contas_a_PagarBindingNavigatorSaveItem_Click(sender, e);
-        }
-       
+        }     
     }
 }

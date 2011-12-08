@@ -26,6 +26,8 @@ namespace Locadora_de_DVDs
 
         private void Form_Devolucao_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_LocadoraDataSet.DVD' table. You can move, or remove it, as needed.
+            this.dVDTableAdapter.Fill(this.bD_LocadoraDataSet.DVD);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Cliente' table. You can move, or remove it, as needed.
             this.clienteTableAdapter.Fill(this.bD_LocadoraDataSet.Cliente);
             // TODO: This line of code loads data into the 'bD_LocadoraDataSet.Item' table. You can move, or remove it, as needed.
