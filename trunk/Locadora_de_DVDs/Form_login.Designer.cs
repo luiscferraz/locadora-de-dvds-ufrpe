@@ -74,6 +74,7 @@
             this.tb_senha.PasswordChar = '*';
             this.tb_senha.Size = new System.Drawing.Size(176, 20);
             this.tb_senha.TabIndex = 14;
+            this.tb_senha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_senha_KeyPress);
             // 
             // tb_login
             // 
@@ -81,6 +82,7 @@
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(176, 20);
             this.tb_login.TabIndex = 12;
+            this.tb_login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_login_KeyPress);
             // 
             // bD_LocadoraDataSet
             // 
@@ -127,11 +129,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 257);
-            this.Controls.Add(this.bt_entrar);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_login);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.bt_entrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

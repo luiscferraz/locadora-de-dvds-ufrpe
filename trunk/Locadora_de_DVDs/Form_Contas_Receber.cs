@@ -77,10 +77,10 @@ namespace Locadora_de_DVDs
             {
                 try
                 {
+                    MessageBox.Show("Alteração realizada com sucesso!", "Alterar Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Validate();
                     this. contas_a_ReceberBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bD_LocadoraDataSet);
-                    MessageBox.Show("Alteração realizada com sucesso!", "Alterar Conta a Pagar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this. contas_a_ReceberTableAdapter.Fill(this.bD_LocadoraDataSet. Contas_a_Receber);
                 }
                 catch (Exception ex)

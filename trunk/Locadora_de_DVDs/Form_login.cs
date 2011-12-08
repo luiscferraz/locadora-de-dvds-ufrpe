@@ -48,8 +48,25 @@ namespace Locadora_de_DVDs
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
-        {
+        {            
             Application.Exit();
         }
+
+        private void tb_login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                bt_entrar_Click(sender, e);
+            }
+        }
+
+        private void tb_senha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                bt_entrar_Click(sender, e);
+            }
+        }
+
     }
 }

@@ -66,6 +66,8 @@ namespace Locadora_de_DVDs {
         
         private global::System.Data.DataRelation relationReservaItensReserva;
         
+        private global::System.Data.DataRelation relationLocaçãoCaixa1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -464,6 +466,7 @@ namespace Locadora_de_DVDs {
             this.relationDVDItem1 = this.Relations["DVDItem1"];
             this.relationDVDItensReserva = this.Relations["DVDItensReserva"];
             this.relationReservaItensReserva = this.Relations["ReservaItensReserva"];
+            this.relationLocaçãoCaixa1 = this.Relations["LocaçãoCaixa1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -536,6 +539,10 @@ namespace Locadora_de_DVDs {
                         this.tableReserva.CódigoColumn}, new global::System.Data.DataColumn[] {
                         this.tableItensReserva.Código_ReservaColumn}, false);
             this.Relations.Add(this.relationReservaItensReserva);
+            this.relationLocaçãoCaixa1 = new global::System.Data.DataRelation("LocaçãoCaixa1", new global::System.Data.DataColumn[] {
+                        this.tableLocação.Preço_TotalColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCaixa.Fundo_de_CaixaColumn}, false);
+            this.Relations.Add(this.relationLocaçãoCaixa1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -703,9 +710,11 @@ namespace Locadora_de_DVDs {
             
             private global::System.Data.DataColumn columnEntrada;
             
-            private global::System.Data.DataColumn columnSaída;
-            
             private global::System.Data.DataColumn columnSaldo;
+            
+            private global::System.Data.DataColumn columnFundo_de_Caixa;
+            
+            private global::System.Data.DataColumn columnSaida;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -758,17 +767,25 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SaídaColumn {
+            public global::System.Data.DataColumn SaldoColumn {
                 get {
-                    return this.columnSaída;
+                    return this.columnSaldo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SaldoColumn {
+            public global::System.Data.DataColumn Fundo_de_CaixaColumn {
                 get {
-                    return this.columnSaldo;
+                    return this.columnFundo_de_Caixa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SaidaColumn {
+                get {
+                    return this.columnSaida;
                 }
             }
             
@@ -809,15 +826,19 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CaixaRow AddCaixaRow(string Mês, LocaçãoRow parentLocaçãoRowByLocaçãoCaixa, int Saída, int Saldo) {
+            public CaixaRow AddCaixaRow(string Mês, LocaçãoRow parentLocaçãoRowByLocaçãoCaixa, int Saldo, LocaçãoRow parentLocaçãoRowByLocaçãoCaixa1, int Saida) {
                 CaixaRow rowCaixaRow = ((CaixaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Mês,
                         null,
-                        Saída,
-                        Saldo};
+                        Saldo,
+                        null,
+                        Saida};
                 if ((parentLocaçãoRowByLocaçãoCaixa != null)) {
                     columnValuesArray[1] = parentLocaçãoRowByLocaçãoCaixa[4];
+                }
+                if ((parentLocaçãoRowByLocaçãoCaixa1 != null)) {
+                    columnValuesArray[3] = parentLocaçãoRowByLocaçãoCaixa1[4];
                 }
                 rowCaixaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCaixaRow);
@@ -850,8 +871,9 @@ namespace Locadora_de_DVDs {
             internal void InitVars() {
                 this.columnMês = base.Columns["Mês"];
                 this.columnEntrada = base.Columns["Entrada"];
-                this.columnSaída = base.Columns["Saída"];
                 this.columnSaldo = base.Columns["Saldo"];
+                this.columnFundo_de_Caixa = base.Columns["Fundo de Caixa"];
+                this.columnSaida = base.Columns["Saida"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -861,10 +883,12 @@ namespace Locadora_de_DVDs {
                 base.Columns.Add(this.columnMês);
                 this.columnEntrada = new global::System.Data.DataColumn("Entrada", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEntrada);
-                this.columnSaída = new global::System.Data.DataColumn("Saída", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSaída);
                 this.columnSaldo = new global::System.Data.DataColumn("Saldo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaldo);
+                this.columnFundo_de_Caixa = new global::System.Data.DataColumn("Fundo de Caixa", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFundo_de_Caixa);
+                this.columnSaida = new global::System.Data.DataColumn("Saida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaida);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMês}, true));
                 this.columnMês.AllowDBNull = false;
@@ -4772,22 +4796,6 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Saída {
-                get {
-                    try {
-                        return ((int)(this[this.tableCaixa.SaídaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Saída\' in table \'Caixa\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCaixa.SaídaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Saldo {
                 get {
                     try {
@@ -4804,12 +4812,55 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Fundo_de_Caixa {
+                get {
+                    try {
+                        return ((int)(this[this.tableCaixa.Fundo_de_CaixaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fundo de Caixa\' in table \'Caixa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCaixa.Fundo_de_CaixaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Saida {
+                get {
+                    try {
+                        return ((int)(this[this.tableCaixa.SaidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Saida\' in table \'Caixa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCaixa.SaidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LocaçãoRow LocaçãoRow {
                 get {
                     return ((LocaçãoRow)(this.GetParentRow(this.Table.ParentRelations["LocaçãoCaixa"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["LocaçãoCaixa"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public LocaçãoRow LocaçãoRowByLocaçãoCaixa1 {
+                get {
+                    return ((LocaçãoRow)(this.GetParentRow(this.Table.ParentRelations["LocaçãoCaixa1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["LocaçãoCaixa1"]);
                 }
             }
             
@@ -4827,18 +4878,6 @@ namespace Locadora_de_DVDs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSaídaNull() {
-                return this.IsNull(this.tableCaixa.SaídaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSaídaNull() {
-                this[this.tableCaixa.SaídaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSaldoNull() {
                 return this.IsNull(this.tableCaixa.SaldoColumn);
             }
@@ -4847,6 +4886,30 @@ namespace Locadora_de_DVDs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSaldoNull() {
                 this[this.tableCaixa.SaldoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFundo_de_CaixaNull() {
+                return this.IsNull(this.tableCaixa.Fundo_de_CaixaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFundo_de_CaixaNull() {
+                this[this.tableCaixa.Fundo_de_CaixaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSaidaNull() {
+                return this.IsNull(this.tableCaixa.SaidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSaidaNull() {
+                this[this.tableCaixa.SaidaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7126,6 +7189,17 @@ namespace Locadora_de_DVDs {
                     return ((ItemRow[])(base.GetChildRows(this.Table.ChildRelations["LocaçãoItem"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CaixaRow[] GetCaixaRowsByLocaçãoCaixa1() {
+                if ((this.Table.ChildRelations["LocaçãoCaixa1"] == null)) {
+                    return new CaixaRow[0];
+                }
+                else {
+                    return ((CaixaRow[])(base.GetChildRows(this.Table.ChildRelations["LocaçãoCaixa1"])));
+                }
+            }
         }
         
         /// <summary>
@@ -7866,48 +7940,51 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             tableMapping.DataSetTable = "Caixa";
             tableMapping.ColumnMappings.Add("Mês", "Mês");
             tableMapping.ColumnMappings.Add("Entrada", "Entrada");
-            tableMapping.ColumnMappings.Add("Saída", "Saída");
             tableMapping.ColumnMappings.Add("Saldo", "Saldo");
+            tableMapping.ColumnMappings.Add("Fundo de Caixa", "Fundo de Caixa");
+            tableMapping.ColumnMappings.Add("Saida", "Saida");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Caixa` WHERE ((`Mês` = ?) AND ((? = 1 AND `Entrada` IS NULL) OR (`En" +
-                "trada` = ?)) AND ((? = 1 AND `Saída` IS NULL) OR (`Saída` = ?)) AND ((? = 1 AND " +
-                "`Saldo` IS NULL) OR (`Saldo` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Caixa` WHERE ((`Mês` = ?) AND ((? = 1 AND `Entrada` IS NULL) OR (`Entrada` = ?)) AND ((? = 1 AND `Saldo` IS NULL) OR (`Saldo` = ?)) AND ((? = 1 AND `Fundo de Caixa` IS NULL) OR (`Fundo de Caixa` = ?)) AND ((? = 1 AND `Saida` IS NULL) OR (`Saida` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mês", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mês", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Caixa` (`Mês`, `Entrada`, `Saída`, `Saldo`) VALUES (?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Caixa` (`Mês`, `Entrada`, `Saldo`, `Fundo de Caixa`, `Saida`) VALUES" +
+                " (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mês", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mês", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Caixa` SET `Mês` = ?, `Entrada` = ?, `Saída` = ?, `Saldo` = ? WHERE ((`Mê" +
-                "s` = ?) AND ((? = 1 AND `Entrada` IS NULL) OR (`Entrada` = ?)) AND ((? = 1 AND `" +
-                "Saída` IS NULL) OR (`Saída` = ?)) AND ((? = 1 AND `Saldo` IS NULL) OR (`Saldo` =" +
-                " ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Caixa` SET `Mês` = ?, `Entrada` = ?, `Saldo` = ?, `Fundo de Caixa` = ?, `Saida` = ? WHERE ((`Mês` = ?) AND ((? = 1 AND `Entrada` IS NULL) OR (`Entrada` = ?)) AND ((? = 1 AND `Saldo` IS NULL) OR (`Saldo` = ?)) AND ((? = 1 AND `Fundo de Caixa` IS NULL) OR (`Fundo de Caixa` = ?)) AND ((? = 1 AND `Saida` IS NULL) OR (`Saida` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mês", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mês", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mês", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mês", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mês", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Entrada", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Entrada", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saída", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saída", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saldo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saldo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Fundo_de_Caixa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fundo de Caixa", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Saida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Saida", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7923,7 +8000,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Mês, Entrada, Saída, Saldo FROM Caixa";
+            this._commandCollection[0].CommandText = "SELECT Mês, Entrada, Saldo, [Fundo de Caixa], Saida FROM Caixa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7984,13 +8061,8 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saída, global::System.Nullable<int> Original_Saldo) {
-            if ((Original_Mês == null)) {
-                throw new global::System.ArgumentNullException("Original_Mês");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Mês));
-            }
+        public virtual int Delete(System.DateTime Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saldo, global::System.Nullable<int> Original_Fundo_de_Caixa, global::System.Nullable<int> Original_Saida) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.DateTime)(Original_Mês));
             if ((Original_Entrada.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Entrada.Value));
@@ -7999,21 +8071,29 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_Saída.HasValue == true)) {
+            if ((Original_Saldo.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Saída.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Saldo.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_Saldo.HasValue == true)) {
+            if ((Original_Fundo_de_Caixa.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Saldo.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Fundo_de_Caixa.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Saida.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Saida.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8035,30 +8115,31 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Mês, global::System.Nullable<int> Entrada, global::System.Nullable<int> Saída, global::System.Nullable<int> Saldo) {
-            if ((Mês == null)) {
-                throw new global::System.ArgumentNullException("Mês");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Mês));
-            }
+        public virtual int Insert(System.DateTime Mês, global::System.Nullable<int> Entrada, global::System.Nullable<int> Saldo, global::System.Nullable<int> Fundo_de_Caixa, global::System.Nullable<int> Saida) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Mês));
             if ((Entrada.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Entrada.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Saída.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Saída.Value));
+            if ((Saldo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Saldo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Saldo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Saldo.Value));
+            if ((Fundo_de_Caixa.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Fundo_de_Caixa.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Saida.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Saida.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8080,60 +8161,64 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Mês, global::System.Nullable<int> Entrada, global::System.Nullable<int> Saída, global::System.Nullable<int> Saldo, string Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saída, global::System.Nullable<int> Original_Saldo) {
-            if ((Mês == null)) {
-                throw new global::System.ArgumentNullException("Mês");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Mês));
-            }
+        public virtual int Update(System.DateTime Mês, global::System.Nullable<int> Entrada, global::System.Nullable<int> Saldo, global::System.Nullable<int> Fundo_de_Caixa, global::System.Nullable<int> Saida, System.DateTime Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saldo, global::System.Nullable<int> Original_Fundo_de_Caixa, global::System.Nullable<int> Original_Saida) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Mês));
             if ((Entrada.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Entrada.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Saída.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Saída.Value));
+            if ((Saldo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Saldo.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Saldo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Saldo.Value));
+            if ((Fundo_de_Caixa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Fundo_de_Caixa.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_Mês == null)) {
-                throw new global::System.ArgumentNullException("Original_Mês");
+            if ((Saida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Saida.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Mês));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Mês));
             if ((Original_Entrada.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Entrada.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Entrada.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Saída.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Saída.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_Saldo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Saldo.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Saldo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Fundo_de_Caixa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Fundo_de_Caixa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Saida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Saida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8155,8 +8240,8 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Entrada, global::System.Nullable<int> Saída, global::System.Nullable<int> Saldo, string Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saída, global::System.Nullable<int> Original_Saldo) {
-            return this.Update(Original_Mês, Entrada, Saída, Saldo, Original_Mês, Original_Entrada, Original_Saída, Original_Saldo);
+        public virtual int Update(global::System.Nullable<int> Entrada, global::System.Nullable<int> Saldo, global::System.Nullable<int> Fundo_de_Caixa, global::System.Nullable<int> Saida, System.DateTime Original_Mês, global::System.Nullable<int> Original_Entrada, global::System.Nullable<int> Original_Saldo, global::System.Nullable<int> Original_Fundo_de_Caixa, global::System.Nullable<int> Original_Saida) {
+            return this.Update(Original_Mês, Entrada, Saldo, Fundo_de_Caixa, Saida, Original_Mês, Original_Entrada, Original_Saldo, Original_Fundo_de_Caixa, Original_Saida);
         }
     }
     

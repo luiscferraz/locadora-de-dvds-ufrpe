@@ -1095,6 +1095,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_Contas_Pagar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas a Pagar";
             this.Load += new System.EventHandler(this.Form_Contas_Pagar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD_LocadoraDataSet)).EndInit();

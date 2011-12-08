@@ -16,6 +16,12 @@ namespace Locadora_de_DVDs
             InitializeComponent();
         }
 
+        private void alterardata()
+        {
+            data_da_LocaçãoDateTimePicker.Text = DateTime.Now.ToShortDateString();
+            data_da_DevoluçãoDateTimePicker.Text = DateTime.Now.AddDays(3).ToShortDateString();
+        }  
+
         private void locaçãoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -55,17 +61,19 @@ namespace Locadora_de_DVDs
                 {
                     locaçãoBindingNavigatorSaveItem_Click(sender, e);
                     MessageBox.Show("Locação realizada com sucesso!", "Locação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (itemDataGridView.RowCount > 1)
-                    {
-                        for (int i = 0; i <= itemDataGridView.RowCount + 1; i++)
-                        {
-                            this.itemBindingSource.RemoveCurrent();
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Informe os DVDs!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // if (itemDataGridView.RowCount > 1)
+                    //{
+                    //  for (int i = 0; i <= itemDataGridView.RowCount + 1; i++)
+                    // {
+                    //   this.itemBindingSource.RemoveCurrent();
+                    //}
+                    //  }
+                    //}
+                    //else
+                    //{
+                    //  MessageBox.Show("Informe os DVDs!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
+                    // }
                 }
             }
         }

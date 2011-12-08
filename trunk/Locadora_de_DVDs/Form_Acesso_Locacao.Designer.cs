@@ -72,6 +72,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form_Acesso_Locacao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Acesso_Locacao";
             this.ResumeLayout(false);
 
