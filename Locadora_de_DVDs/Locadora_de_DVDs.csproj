@@ -69,12 +69,6 @@
     <Compile Include="Form_Acesso_Contas.Designer.cs">
       <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Acesso_Locacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Acesso_Locacao.Designer.cs">
-      <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_Caixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Acesso_Contas.resx">
       <DependentUpon>Form_Acesso_Contas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Acesso_Locacao.resx">
-      <DependentUpon>Form_Acesso_Locacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Caixa.resx">
       <DependentUpon>Form_Caixa.cs</DependentUpon>

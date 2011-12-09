@@ -42,11 +42,6 @@ namespace Locadora_de_DVDs
             new Form_fornecedores().ShowDialog();
         }
 
-        private void bt_loc_dev_Click(object sender, EventArgs e)
-        {
-            new Form_Acesso_Locacao().ShowDialog();
-        }
-
         private void bt_funcionarios_Click(object sender, EventArgs e)
         {
             new Form_funcionarios().ShowDialog();
@@ -61,6 +56,26 @@ namespace Locadora_de_DVDs
         private void bt_caixa_Click(object sender, EventArgs e)
         {
             new Form_Caixa().ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Form_Locacao_S().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form_Devolucao().ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Form_Reserva().ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
