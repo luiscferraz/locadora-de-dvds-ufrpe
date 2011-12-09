@@ -340,9 +340,9 @@ Link ( )
 
 
 ===Número do Caso de Uso: UC0006===
-*Nome do caso de Uso:* Contas. br>
+*Nome do caso de Uso:* Contas. <br>
 *Objetivos:* Controlar as ações monetárias da locadora .<br>
-*Descrição:* Controlar as entradas e saidas de dinheiro da locadora. br>
+*Descrição:* Controlar as entradas e saidas de dinheiro da locadora. <br>
 *Ator:* Usuário<br>
 *Prioridade:* Baixa<br> 
 
