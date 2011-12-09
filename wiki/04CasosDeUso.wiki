@@ -205,3 +205,135 @@ Link ( )
 *A1.*Código da locação não encontrado, retorna ao passo 1;
 
 *A2.* Erro ao salvar o registro: uma mesagem de erro é exibida, retornando ao passo 3;
+
+
+===Número do Caso de Uso: UC0004===
+*Nome do caso de Uso:* Manter Funcionários<br>
+*Objetivos:* Fazer CRUD's de Funcionários .<br>
+*Descrição:* Cadastrar, Remover, Atualizar e Consultar Funcionários.<br>
+*Ator:* Usuário<br>
+*Prioridade:* Alta<br> 
+
+*Pré-condições:* Funcionário cadastrado no sistema e com permissão de acesso. Efetuar Login.
+
+*Pós-condições:* Ter acesso no sistema. Fazer Operações no sistema.
+
+===Cenários principais de sucesso:===
+
+*Cadastro de Funcionário*
+
+*1.* O novo Funcionário informa seus dados pessoais para a realização do cadastro;
+
+*2.* O Usuário logado no sistema cadastra os dados do novo funcionário na base de dados;
+
+*3.* O sistema envia uma mensagem de êxito, após a realização de cadastro;
+
+<br>*Exclusão de Cadastro*
+
+*1.* O Usuário informa o nome do funcionário a ser procurado na base de dados;
+
+*2.* Os dados do cliente são exibidos;
+
+*3.* O Usuário seleciona a opção de excluir o cadastro e uma mensagem de confirmação é exibida;
+
+*4.* O Usuário confirma e o cadastro é excluído.
+
+
+<br>*Alteração de Cadastro*
+
+*1.* O Usuário informa o nome do funcionário a ser procurado na base de dados;
+
+*2.* Os dados do funcionário são exibidos;
+
+*3.* O Usuário altera os dados e salva na base de dados;
+
+<br>*Consulta*
+
+*1.* O Usuário informa o nome do funcionário a ser procurado;
+
+*2.* Os dados do funcionário são exibidos
+===Fluxos Alternativos:===
+
+*Cadastro de Funcionário*
+
+*A1.* Erro ao salvar o cadastro: uma mensagem de erro é exibida, retornando ao passo 2 para continuação do cadastro;
+
+<br>*Exclusão de Cadastro*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1;
+
+<br>*Alteração de Cadastro*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1;
+
+*A2.* Erro ao salvar o cadastro: uma mesagem de erro é exibida, retornando ao passo 2;
+
+<br>*Consulta de Funcionário*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1.
+
+
+===Número do Caso de Uso: UC0005===
+*Nome do caso de Uso:* Manter Fornecedores<br>
+*Objetivos:* Fazer CRUD's de Fornecedores .<br>
+*Descrição:* Cadastrar, Remover, Atualizar e Consultar Fornecedores.<br>
+*Ator:* Usuário<br>
+*Prioridade:* Alta<br> 
+
+*Pré-condições:* Usuário cadastrado no sistema e com permissão de acesso. Efetuar Login.
+
+*Pós-condições:* Cadastrar DVD's para o acervo da locadora.
+
+===Cenários principais de sucesso:===
+
+*Cadastro de Fornecedores*
+
+*1.* O novo fornecedor informa seus dados pessoais para a realização do cadastro;
+
+*2.* O Usuário logado no sistema cadastra os dados do novo fornecedor na base de dados;
+
+*3.* O sistema envia uma mensagem de êxito, após a realização de cadastro;
+
+<br>*Exclusão de Cadastro*
+
+*1.* O Usuário informa o nome do fornecedor a ser procurado na base de dados;
+
+*2.* Os dados do cliente são exibidos;
+
+*3.* O Usuário seleciona a opção de excluir o cadastro e uma mensagem de confirmação é exibida;
+
+*4.* O Usuário confirma e o cadastro é excluído.
+
+
+<br>*Alteração de Cadastro*
+
+*1.* O Usuário informa o nome do fornecedor a ser procurado na base de dados;
+
+*2.* Os dados do fornecedor são exibidos;
+
+*3.* O Usuário altera os dados e salva na base de dados;
+
+<br>*Consulta de Fornecedor*
+
+*1.* O Usuário informa o nome do fornecedor a ser procurado;
+
+*2.* Os dados do fornecedor são exibidos.
+===Fluxos Alternativos:===
+
+*Cadastro de Fornecedor*
+
+*A1.* Erro ao salvar o cadastro: uma mensagem de erro é exibida, retornando ao passo 2 para continuação do cadastro;
+
+<br>*Exclusão de Cadastro*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1;
+
+<br>*Alteração de Cadastro*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1;
+
+*A2.* Erro ao salvar o cadastro: uma mesagem de erro é exibida, retornando ao passo 2;
+
+<br>*Consulta de Fornecedor*
+
+*A1.* Cadastro não encontrado, retorna ao passo 1.
