@@ -10459,7 +10459,7 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Código DVD], Título, Gênero, Preço, Classificação, [Código do Fornecedor]" +
@@ -10479,6 +10479,30 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
                 "IKE \'%\' + ? + \'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Título", global::System.Data.OleDb.OleDbType.WChar, 100, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Título", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE BD_Locadora\r\nSET\r\n[Nº de Cópias Disponíveis] = [Nº de Cópias Disponíveis] " +
+                "- 1\r\nWHERE [Nº de Cópias Disponíveis] > 0;";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Título", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Título", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Gênero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Gênero", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Preço", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Preço", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Código_do_Fornecedor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código do Fornecedor", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Código_DVD", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código DVD", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Título", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Título", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Título", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Título", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Gênero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Gênero", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Gênero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Gênero", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Preço", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Preço", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Preço", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Preço", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Classificação", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Classificação", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Classificação", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Código_do_Fornecedor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código do Fornecedor", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Código_do_Fornecedor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Código do Fornecedor", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Nº_de_Cópias_Disponíveis", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nº de Cópias Disponíveis", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10827,6 +10851,157 @@ namespace Locadora_de_DVDs.BD_LocadoraDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    string Título, 
+                    string Gênero, 
+                    string Preço, 
+                    string Classificação, 
+                    global::System.Nullable<int> Código_do_Fornecedor, 
+                    global::System.Nullable<int> Nº_de_Cópias_Disponíveis, 
+                    int Original_Código_DVD, 
+                    global::System.Nullable<int> IsNull_Título, 
+                    string Original_Título, 
+                    global::System.Nullable<int> IsNull_Gênero, 
+                    string Original_Gênero, 
+                    global::System.Nullable<int> IsNull_Preço, 
+                    string Original_Preço, 
+                    global::System.Nullable<int> IsNull_Classificação, 
+                    string Original_Classificação, 
+                    global::System.Nullable<int> IsNull_Código_do_Fornecedor, 
+                    global::System.Nullable<int> Original_Código_do_Fornecedor, 
+                    global::System.Nullable<int> IsNull_Nº_de_Cópias_Disponíveis, 
+                    global::System.Nullable<int> Original_Nº_de_Cópias_Disponíveis) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            if ((Título == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Título));
+            }
+            if ((Gênero == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Gênero));
+            }
+            if ((Preço == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Preço));
+            }
+            if ((Classificação == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Classificação));
+            }
+            if ((Código_do_Fornecedor.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(Código_do_Fornecedor.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Nº_de_Cópias_Disponíveis.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(Nº_de_Cópias_Disponíveis.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[6].Value = ((int)(Original_Código_DVD));
+            if ((IsNull_Título.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(IsNull_Título.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Título == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(Original_Título));
+            }
+            if ((IsNull_Gênero.HasValue == true)) {
+                command.Parameters[9].Value = ((int)(IsNull_Gênero.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Gênero == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(Original_Gênero));
+            }
+            if ((IsNull_Preço.HasValue == true)) {
+                command.Parameters[11].Value = ((int)(IsNull_Preço.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Preço == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(Original_Preço));
+            }
+            if ((IsNull_Classificação.HasValue == true)) {
+                command.Parameters[13].Value = ((int)(IsNull_Classificação.Value));
+            }
+            else {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Classificação == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(Original_Classificação));
+            }
+            if ((IsNull_Código_do_Fornecedor.HasValue == true)) {
+                command.Parameters[15].Value = ((int)(IsNull_Código_do_Fornecedor.Value));
+            }
+            else {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Código_do_Fornecedor.HasValue == true)) {
+                command.Parameters[16].Value = ((int)(Original_Código_do_Fornecedor.Value));
+            }
+            else {
+                command.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((IsNull_Nº_de_Cópias_Disponíveis.HasValue == true)) {
+                command.Parameters[17].Value = ((int)(IsNull_Nº_de_Cópias_Disponíveis.Value));
+            }
+            else {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Nº_de_Cópias_Disponíveis.HasValue == true)) {
+                command.Parameters[18].Value = ((int)(Original_Nº_de_Cópias_Disponíveis.Value));
+            }
+            else {
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

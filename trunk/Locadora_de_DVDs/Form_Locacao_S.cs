@@ -104,6 +104,10 @@ namespace Locadora_de_DVDs
                 {
                     MessageBox.Show("DVD não cadastrado!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                //if (cod == 1)
+                //{
+                    //this.dVDTableAdapter.UpdateQuery
+                //}
             }
 
             int cod;
